@@ -45,105 +45,135 @@
   },
   "hotPaths": [
     {
+      "path": "bin/oh-my-sdd.js",
+      "accessCount": 5,
+      "lastAccessed": 1782928568136,
+      "type": "file"
+    },
+    {
       "path": "package.json",
       "accessCount": 4,
       "lastAccessed": 1782925886025,
       "type": "file"
     },
     {
-      "path": "bin/oh-my-sdd.js",
-      "accessCount": 3,
-      "lastAccessed": 1782925887104,
-      "type": "file"
-    },
-    {
       "path": "knowledge/0-sdd-index.md",
-      "accessCount": 2,
-      "lastAccessed": 1782917896320,
-      "type": "file"
-    },
-    {
-      "path": "skills/oh-my-sdd/SKILL.md",
-      "accessCount": 2,
-      "lastAccessed": 1782917940898,
-      "type": "file"
-    },
-    {
-      "path": "knowledge/1-what-is-sdd.md",
-      "accessCount": 1,
-      "lastAccessed": 1782915762254,
-      "type": "file"
-    },
-    {
-      "path": "knowledge/2-goal-of-sdd.md",
-      "accessCount": 1,
-      "lastAccessed": 1782915762682,
-      "type": "file"
-    },
-    {
-      "path": "knowledge/3-best-practices-spec.md",
-      "accessCount": 1,
-      "lastAccessed": 1782915763332,
-      "type": "file"
-    },
-    {
-      "path": "knowledge/4-practical-example.md",
-      "accessCount": 1,
-      "lastAccessed": 1782915763722,
-      "type": "file"
-    },
-    {
-      "path": "knowledge/5-best-practices-constitution.md",
-      "accessCount": 1,
-      "lastAccessed": 1782915764099,
-      "type": "file"
-    },
-    {
-      "path": "knowledge/6-example-constitution.md",
-      "accessCount": 1,
-      "lastAccessed": 1782915764488,
-      "type": "file"
-    },
-    {
-      "path": "lib/installer/manifest.js",
-      "accessCount": 1,
-      "lastAccessed": 1782917791498,
-      "type": "file"
-    },
-    {
-      "path": "lib/installer/writer.js",
-      "accessCount": 1,
-      "lastAccessed": 1782917805933,
+      "accessCount": 3,
+      "lastAccessed": 1782928114113,
       "type": "file"
     },
     {
       "path": "lib/commands/install.js",
-      "accessCount": 1,
-      "lastAccessed": 1782917816809,
+      "accessCount": 3,
+      "lastAccessed": 1782928149841,
       "type": "file"
     },
     {
       "path": "lib/commands/uninstall.js",
-      "accessCount": 1,
-      "lastAccessed": 1782917821507,
+      "accessCount": 3,
+      "lastAccessed": 1782928152812,
       "type": "file"
     },
     {
       "path": "lib/commands/status.js",
-      "accessCount": 1,
-      "lastAccessed": 1782917824790,
+      "accessCount": 3,
+      "lastAccessed": 1782928159251,
+      "type": "file"
+    },
+    {
+      "path": "skills/oh-my-sdd/SKILL.md",
+      "accessCount": 3,
+      "lastAccessed": 1782928403387,
       "type": "file"
     },
     {
       "path": "README.md",
-      "accessCount": 1,
-      "lastAccessed": 1782917959427,
+      "accessCount": 3,
+      "lastAccessed": 1782928556393,
+      "type": "file"
+    },
+    {
+      "path": "lib/installer/manifest.js",
+      "accessCount": 2,
+      "lastAccessed": 1782928111394,
+      "type": "file"
+    },
+    {
+      "path": "knowledge/1-what-is-sdd.md",
+      "accessCount": 2,
+      "lastAccessed": 1782928114498,
+      "type": "file"
+    },
+    {
+      "path": "knowledge/2-goal-of-sdd.md",
+      "accessCount": 2,
+      "lastAccessed": 1782928115216,
+      "type": "file"
+    },
+    {
+      "path": "knowledge/3-best-practices-spec.md",
+      "accessCount": 2,
+      "lastAccessed": 1782928115555,
+      "type": "file"
+    },
+    {
+      "path": "knowledge/4-practical-example.md",
+      "accessCount": 2,
+      "lastAccessed": 1782928116024,
+      "type": "file"
+    },
+    {
+      "path": "knowledge/5-best-practices-constitution.md",
+      "accessCount": 2,
+      "lastAccessed": 1782928116641,
+      "type": "file"
+    },
+    {
+      "path": "knowledge/6-example-constitution.md",
+      "accessCount": 2,
+      "lastAccessed": 1782928117002,
+      "type": "file"
+    },
+    {
+      "path": "lib/installer/writer.js",
+      "accessCount": 2,
+      "lastAccessed": 1782928127646,
       "type": "file"
     },
     {
       "path": "LICENSE",
       "accessCount": 1,
       "lastAccessed": 1782917971893,
+      "type": "file"
+    },
+    {
+      "path": "skills/oh-my-sdd-constitution/SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1782928423508,
+      "type": "file"
+    },
+    {
+      "path": "skills/oh-my-sdd-specify/SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1782928437048,
+      "type": "file"
+    },
+    {
+      "path": "skills/oh-my-sdd-plan/SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1782928447518,
+      "type": "file"
+    },
+    {
+      "path": "skills/oh-my-sdd-tasks/SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1782928457322,
+      "type": "file"
+    },
+    {
+      "path": "skills/oh-my-sdd-implement/SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1782928468904,
       "type": "file"
     }
   ],

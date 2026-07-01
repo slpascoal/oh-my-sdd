@@ -19,14 +19,14 @@ const commands = {
 if (!command || command === '--help' || command === '-h') {
   console.log(`
   ${chalk.bold('oh-my-sdd')} v${pkg.version}
-  Spec-Driven Development, enforced by a global Claude Code skill.
+  Spec-Driven Development, enforced by a global orchestrator + 5 Claude Code skills.
 
   Uso: npx oh-my-sdd <comando>
 
   Comandos:
-    install      Instala a skill oh-my-sdd globalmente em ~/.claude/skills/
+    install      Instala as 6 skills oh-my-sdd globalmente em ~/.claude/skills/
     status       Mostra o estado atual da instalação
-    uninstall    Remove a skill oh-my-sdd de ~/.claude/skills/
+    uninstall    Remove as 6 skills oh-my-sdd de ~/.claude/skills/
 
   Documentação: https://github.com/slpascoal/oh-my-sdd
   `);

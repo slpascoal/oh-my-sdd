@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"echo \\\"y\\\" | node bin/oh-my-sdd.js uninstall; echo \\\"---\\\"; ls /home/silaspascoal/.claude/skills/oh-my-sdd 2>&1\"}",
+  "error": "Exit code 2\n\u001b[1mRemover /home/silaspascoal/.claude/skills/oh-my-sdd?\u001b[22m\u001b[0m \u001b[0m\u001b[2m(y/N) \u001b[22m\u001b[59D\u001b[59C\u001b[2K\u001b[G\u001b[1mRemover /home/silaspascoal/.claude/skills/oh-my-sdd?\u001b[22m\u001b[0m \u001b[0m\u001b[2m(y/N) \u001b[22my\u001b[60D\u001b[60C\u001b[2K\u001b[G\u001b[1mRemover /home/silaspascoal/.claude/skills/oh-my-sdd?\u001b[22m\u001b[0m \u001b[0m\u001b[36mYes\u001b[39m\u001b[56D\u001b[56C\n\u001b[?25h\n  oh-my-sdd removido de /home/silaspascoal/.claude/skills/oh-my-sdd\n\n---\nls: não foi possível acessar '/home/silaspascoal/.claude/skills/oh-my-sdd': Arquivo ou diretório inexistente",
+  "timestamp": "2026-07-01T15:03:33.646Z",
+  "retry_count": 1
+}

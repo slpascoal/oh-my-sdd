@@ -1,0 +1,151 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1782912681822,
+  "projectRoot": "/home/silaspascoal/projetos/oh-my-sdd",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "knowledge": {
+      "path": "knowledge",
+      "purpose": null,
+      "fileCount": 7,
+      "lastAccessed": 1782912681817,
+      "keyFiles": [
+        "0-sdd-index.md",
+        "1-what-is-sdd.md",
+        "2-goal-of-sdd.md",
+        "3-best-practices-spec.md",
+        "4-practical-example.md"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "knowledge/0-sdd-index.md",
+      "accessCount": 2,
+      "lastAccessed": 1782917896320,
+      "type": "file"
+    },
+    {
+      "path": "skills/oh-my-sdd/SKILL.md",
+      "accessCount": 2,
+      "lastAccessed": 1782917940898,
+      "type": "file"
+    },
+    {
+      "path": "package.json",
+      "accessCount": 2,
+      "lastAccessed": 1782917997735,
+      "type": "file"
+    },
+    {
+      "path": "knowledge/1-what-is-sdd.md",
+      "accessCount": 1,
+      "lastAccessed": 1782915762254,
+      "type": "file"
+    },
+    {
+      "path": "knowledge/2-goal-of-sdd.md",
+      "accessCount": 1,
+      "lastAccessed": 1782915762682,
+      "type": "file"
+    },
+    {
+      "path": "knowledge/3-best-practices-spec.md",
+      "accessCount": 1,
+      "lastAccessed": 1782915763332,
+      "type": "file"
+    },
+    {
+      "path": "knowledge/4-practical-example.md",
+      "accessCount": 1,
+      "lastAccessed": 1782915763722,
+      "type": "file"
+    },
+    {
+      "path": "knowledge/5-best-practices-constitution.md",
+      "accessCount": 1,
+      "lastAccessed": 1782915764099,
+      "type": "file"
+    },
+    {
+      "path": "knowledge/6-example-constitution.md",
+      "accessCount": 1,
+      "lastAccessed": 1782915764488,
+      "type": "file"
+    },
+    {
+      "path": "bin/oh-my-sdd.js",
+      "accessCount": 1,
+      "lastAccessed": 1782917783270,
+      "type": "file"
+    },
+    {
+      "path": "lib/installer/manifest.js",
+      "accessCount": 1,
+      "lastAccessed": 1782917791498,
+      "type": "file"
+    },
+    {
+      "path": "lib/installer/writer.js",
+      "accessCount": 1,
+      "lastAccessed": 1782917805933,
+      "type": "file"
+    },
+    {
+      "path": "lib/commands/install.js",
+      "accessCount": 1,
+      "lastAccessed": 1782917816809,
+      "type": "file"
+    },
+    {
+      "path": "lib/commands/uninstall.js",
+      "accessCount": 1,
+      "lastAccessed": 1782917821507,
+      "type": "file"
+    },
+    {
+      "path": "lib/commands/status.js",
+      "accessCount": 1,
+      "lastAccessed": 1782917824790,
+      "type": "file"
+    },
+    {
+      "path": "README.md",
+      "accessCount": 1,
+      "lastAccessed": 1782917959427,
+      "type": "file"
+    },
+    {
+      "path": "LICENSE",
+      "accessCount": 1,
+      "lastAccessed": 1782917971893,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

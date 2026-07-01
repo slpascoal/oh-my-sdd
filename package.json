@@ -1,0 +1,35 @@
+{
+  "name": "oh-my-sdd",
+  "version": "0.1.0",
+  "description": "Global Claude Code skill that enforces Spec-Driven Development (SDD): consult the knowledge base, write specs, then implement.",
+  "bin": {
+    "oh-my-sdd": "bin/oh-my-sdd.js"
+  },
+  "type": "module",
+  "keywords": [
+    "claude",
+    "claude-code",
+    "spec-driven-development",
+    "sdd",
+    "skill",
+    "agents"
+  ],
+  "files": [
+    "bin/",
+    "lib/",
+    "skills/",
+    "knowledge/",
+    "README.md",
+    "LICENSE"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "inquirer": "^9.2.0",
+    "ora": "^7.0.1"
+  }
+}

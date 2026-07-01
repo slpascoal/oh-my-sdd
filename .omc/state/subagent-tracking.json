@@ -1,0 +1,17 @@
+{
+  "agents": [
+    {
+      "agent_id": "a0bf8d41bead8da29",
+      "agent_type": "Plan",
+      "started_at": "2026-07-01T14:30:14.755Z",
+      "parent_mode": "none",
+      "status": "completed",
+      "completed_at": "2026-07-01T14:31:29.986Z",
+      "duration_ms": 75231
+    }
+  ],
+  "total_spawned": 2,
+  "total_completed": 18,
+  "total_failed": 0,
+  "last_updated": "2026-07-01T15:07:12.002Z"
+}

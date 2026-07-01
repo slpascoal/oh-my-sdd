@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"echo \\\"--- ls ---\\\" && ls -la && echo \\\"--- gh pages status ---\\\" && gh api repos/slpascoal/oh-my-sdd/pages 2>&1 | head -20 && echo \\\"--- branches ---\\\" && git branch -a && echo \\\"--- gh w...",
-  "error": "Exit code 2\n--- ls ---\ntotal 88\ndrwxrwxr-x 11 silaspascoal silaspascoal  4096 jul  1 15:07 .\ndrwxrwxr-x 21 silaspascoal silaspascoal  4096 jul  1 09:47 ..\ndrwxrwxr-x  2 silaspascoal silaspascoal  4096 jul  1 14:56 bin\ndrwxrwxr-x  2 silaspascoal silaspascoal  4096 jul  1 16:05 .claude\ndrwxrwxr-x  9 silaspascoal silaspascoal  4096 jul  1 17:05 .git\n-rw-rw-r--  1 silaspascoal silaspascoal    30 jul  1 11:59 .gitignore\ndrwxrwxr-x  2 silaspascoal silaspascoal  4096 jul  1 10:17 knowledge\ndrwxrwxr-x  ...",
-  "timestamp": "2026-07-01T20:07:16.257Z",
+  "tool_input_preview": "{\"command\":\"npm version patch -m \\\"chore: release v%s\\\"\"}",
+  "error": "Exit code 1\nnpm ERR! Git working directory not clean.\n\nnpm ERR! A complete log of this run can be found in: /home/silaspascoal/.npm/_logs/2026-07-01T20_33_29_469Z-debug-0.log",
+  "timestamp": "2026-07-01T20:33:30.362Z",
   "retry_count": 1
 }

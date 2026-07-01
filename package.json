@@ -1,6 +1,6 @@
 {
   "name": "oh-my-sdd",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Global Claude Code skill that enforces Spec-Driven Development (SDD): consult the knowledge base, write specs, then implement.",
   "bin": {
     "oh-my-sdd": "bin/oh-my-sdd.js"

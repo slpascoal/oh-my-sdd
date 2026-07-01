@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"echo \\\"y\\\" | node bin/oh-my-sdd.js uninstall; echo \\\"---\\\"; ls /home/silaspascoal/.claude/skills/oh-my-sdd 2>&1\"}",
-  "error": "Exit code 2\n\u001b[1mRemover /home/silaspascoal/.claude/skills/oh-my-sdd?\u001b[22m\u001b[0m \u001b[0m\u001b[2m(y/N) \u001b[22m\u001b[59D\u001b[59C\u001b[2K\u001b[G\u001b[1mRemover /home/silaspascoal/.claude/skills/oh-my-sdd?\u001b[22m\u001b[0m \u001b[0m\u001b[2m(y/N) \u001b[22my\u001b[60D\u001b[60C\u001b[2K\u001b[G\u001b[1mRemover /home/silaspascoal/.claude/skills/oh-my-sdd?\u001b[22m\u001b[0m \u001b[0m\u001b[36mYes\u001b[39m\u001b[56D\u001b[56C\n\u001b[?25h\n  oh-my-sdd removido de /home/silaspascoal/.claude/skills/oh-my-sdd\n\n---\nls: não foi possível acessar '/home/silaspascoal/.claude/skills/oh-my-sdd': Arquivo ou diretório inexistente",
-  "timestamp": "2026-07-01T15:03:33.646Z",
+  "tool_input_preview": "{\"command\":\"echo \\\"--- remote ---\\\" && git remote -v && echo \\\"--- npm whoami ---\\\" && npm whoami 2>&1 && echo \\\"--- name taken? ---\\\" && npm view oh-my-sdd 2>&1 | head -5\"}",
+  "error": "Exit code 1\n--- remote ---\norigin\tgit@github.com:slpascoal/oh-my-sdd.git (fetch)\norigin\tgit@github.com:slpascoal/oh-my-sdd.git (push)\n--- npm whoami ---\nnpm ERR! code ENEEDAUTH\nnpm ERR! need auth This command requires you to be logged in.\nnpm ERR! need auth You need to authorize this machine using `npm adduser`\n\nnpm ERR! A complete log of this run can be found in: /home/silaspascoal/.npm/_logs/2026-07-01T17_03_49_585Z-debug-0.log",
+  "timestamp": "2026-07-01T17:03:49.729Z",
   "retry_count": 1
 }

@@ -18,6 +18,7 @@ Depois de instalada, a skill é descoberta automaticamente pelo Claude Code semp
 /oh-my-sdd "adicionar endpoint de logout que invalida o refresh token"
 /oh-my-sdd PROJ-123
 /oh-my-sdd https://empresa.atlassian.net/browse/PROJ-123
+/oh-my-sdd <Prompt livre> + <Jira Ticket ID>
 ```
 
 O fluxo:

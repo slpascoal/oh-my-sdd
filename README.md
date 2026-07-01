@@ -1,51 +1,51 @@
 # oh-my-sdd
 
-Conjunto de skills globais do Claude Code que aplicam **Spec-Driven Development (SDD)** de forma rigorosa: antes de implementar qualquer tarefa, o Claude analisa o projeto, gera `constitution.md` → `spec.md` → `plan.md` → `tasks.md`, com validação humana obrigatória antes de liberar a implementação.
+A set of global Claude Code skills that rigorously enforce **Spec-Driven Development (SDD)**: before implementing any task, Claude analyzes the project, generates `constitution.md` → `spec.md` → `plan.md` → `tasks.md`, with mandatory human validation before implementation is allowed to start.
 
-## Instalação
+## Installation
 
 ```bash
 npx oh-my-sdd install
 ```
 
-Isso instala as 6 skills globalmente em `~/.claude/skills/`, disponíveis em qualquer projeto aberto no Claude Code — a instalação não depende do diretório em que o comando é executado.
+This installs the 6 skills globally in `~/.claude/skills/`, available in any project opened in Claude Code — installation does not depend on the directory the command is run from.
 
-## Arquitetura
+## Architecture
 
-Uma skill orquestradora (`oh-my-sdd`) ativa, em sequência, 5 skills especializadas — uma por fase do SDD:
+An orchestrator skill (`oh-my-sdd`) activates, in sequence, 5 specialized skills — one per SDD phase:
 
-| Skill | Responsabilidade |
+| Skill | Responsibility |
 |---|---|
-| `oh-my-sdd` | Orquestra o fluxo, identifica o input (texto livre ou Jira) e ativa as demais em ordem |
-| `oh-my-sdd-constitution` | Analisa o projeto (stack, convenções, lint) e gera/confirma `.oh-my-sdd/constitution.md`, perguntando ao usuário só o que não puder inferir |
-| `oh-my-sdd-specify` | Gera `spec.md` em EARS/GEARS — **checkpoint humano #1** |
-| `oh-my-sdd-plan` | Traduz o spec validado em decisões técnicas (`plan.md`) |
-| `oh-my-sdd-tasks` | Quebra o plano em tarefas atômicas (`tasks.md`) — **checkpoint humano #2** |
-| `oh-my-sdd-implement` | Implementa tarefa por tarefa, só depois dos dois checkpoints confirmados |
+| `oh-my-sdd` | Orchestrates the flow, identifies the input (free text or Jira) and activates the others in order |
+| `oh-my-sdd-constitution` | Analyzes the project (stack, conventions, lint) and generates/confirms `.oh-my-sdd/constitution.md`, asking the user only what it can't infer |
+| `oh-my-sdd-specify` | Generates `spec.md` in EARS/GEARS — **human checkpoint #1** |
+| `oh-my-sdd-plan` | Translates the validated spec into technical decisions (`plan.md`) |
+| `oh-my-sdd-tasks` | Breaks the plan into atomic tasks (`tasks.md`) — **human checkpoint #2** |
+| `oh-my-sdd-implement` | Implements task by task, only after both checkpoints are confirmed |
 
-Cada skill instalada é autocontida: recebe sua própria cópia de [`knowledge/`](./knowledge), a base de conhecimento sobre SDD (níveis de maturidade, sintaxe EARS/GEARS, hierarquia de artefatos, exemplos práticos) que fundamenta como cada fase gera seu documento.
+Each installed skill is self-contained: it gets its own copy of [`knowledge/`](./knowledge), the SDD knowledge base (maturity levels, EARS/GEARS syntax, artifact hierarchy, practical examples) that underpins how each phase generates its document.
 
-## Uso
+## Usage
 
-Depois de instalada, o fluxo é descoberto automaticamente pelo Claude Code sempre que uma tarefa deva ser especificada antes de implementada. Também pode ser invocado diretamente:
+Once installed, the flow is automatically discovered by Claude Code whenever a task should be specified before being implemented. It can also be invoked directly:
 
 ```
-/oh-my-sdd "adicionar endpoint de logout que invalida o refresh token"
+/oh-my-sdd "add a logout endpoint that invalidates the refresh token"
 /oh-my-sdd PROJ-123
-/oh-my-sdd https://empresa.atlassian.net/browse/PROJ-123
+/oh-my-sdd https://company.atlassian.net/browse/PROJ-123
 ```
 
-## Outros comandos
+## Other commands
 
 ```bash
-npx oh-my-sdd status      # mostra quais das 6 skills estão instaladas e se algum arquivo foi modificado manualmente
-npx oh-my-sdd uninstall   # remove as 6 skills de ~/.claude/skills/
+npx oh-my-sdd status      # shows which of the 6 skills are installed and whether any file was manually modified
+npx oh-my-sdd uninstall   # removes the 6 skills from ~/.claude/skills/
 ```
 
-## Base de conhecimento
+## Knowledge base
 
-A pasta [`knowledge/`](./knowledge) documenta os fundamentos do SDD usados por cada skill: níveis de maturidade (spec-first, spec-anchored, spec-as-source), boas práticas para escrever specs e constitutions, sintaxe EARS/GEARS e exemplos práticos completos.
+The [`knowledge/`](./knowledge) folder documents the SDD fundamentals used by every skill: maturity levels (spec-first, spec-anchored, spec-as-source), best practices for writing specs and constitutions, EARS/GEARS syntax, and complete practical examples.
 
-## Licença
+## License
 
 MIT

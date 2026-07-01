@@ -52,8 +52,14 @@
     },
     {
       "path": "package.json",
-      "accessCount": 4,
-      "lastAccessed": 1782925886025,
+      "accessCount": 5,
+      "lastAccessed": 1782928716487,
+      "type": "file"
+    },
+    {
+      "path": "README.md",
+      "accessCount": 5,
+      "lastAccessed": 1782929230756,
       "type": "file"
     },
     {
@@ -84,12 +90,6 @@
       "path": "skills/oh-my-sdd/SKILL.md",
       "accessCount": 3,
       "lastAccessed": 1782928403387,
-      "type": "file"
-    },
-    {
-      "path": "README.md",
-      "accessCount": 3,
-      "lastAccessed": 1782928556393,
       "type": "file"
     },
     {

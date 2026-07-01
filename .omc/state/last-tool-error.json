@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"npm publish 2>&1\"}",
-  "error": "Exit code 1\nnpm WARN publish npm auto-corrected some errors in your package.json when publishing.  Please run \"npm pkg fix\" to address these errors.\nnpm WARN publish errors corrected:\nnpm WARN publish Removed invalid \"scripts\"\nnpm notice \nnpm notice 📦  oh-my-sdd@0.2.0\nnpm notice === Tarball Contents === \nnpm notice 1.1kB LICENSE                                   \nnpm notice 2.5kB README.md                                 \nnpm notice 1.4kB bin/oh-my-sdd.js                          \nnpm notice 51...",
-  "timestamp": "2026-07-01T17:59:11.158Z",
+  "tool_input_preview": "{\"command\":\"echo \\\"--- ls ---\\\" && ls -la && echo \\\"--- gh pages status ---\\\" && gh api repos/slpascoal/oh-my-sdd/pages 2>&1 | head -20 && echo \\\"--- branches ---\\\" && git branch -a && echo \\\"--- gh w...",
+  "error": "Exit code 2\n--- ls ---\ntotal 88\ndrwxrwxr-x 11 silaspascoal silaspascoal  4096 jul  1 15:07 .\ndrwxrwxr-x 21 silaspascoal silaspascoal  4096 jul  1 09:47 ..\ndrwxrwxr-x  2 silaspascoal silaspascoal  4096 jul  1 14:56 bin\ndrwxrwxr-x  2 silaspascoal silaspascoal  4096 jul  1 16:05 .claude\ndrwxrwxr-x  9 silaspascoal silaspascoal  4096 jul  1 17:05 .git\n-rw-rw-r--  1 silaspascoal silaspascoal    30 jul  1 11:59 .gitignore\ndrwxrwxr-x  2 silaspascoal silaspascoal  4096 jul  1 10:17 knowledge\ndrwxrwxr-x  ...",
+  "timestamp": "2026-07-01T20:07:16.257Z",
   "retry_count": 1
 }

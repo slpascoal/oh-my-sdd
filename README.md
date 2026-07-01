@@ -2,6 +2,8 @@
 
 A set of global Claude Code skills that rigorously enforce **Spec-Driven Development (SDD)**: before implementing any task, Claude analyzes the project, generates `constitution.md` → `spec.md` → `plan.md` → `tasks.md`, with mandatory human validation before implementation is allowed to start.
 
+📖 **Documentation:** [English](https://slpascoal.github.io/oh-my-sdd/) · [Português](https://slpascoal.github.io/oh-my-sdd/pt/)
+
 ## Installation
 
 ```bash

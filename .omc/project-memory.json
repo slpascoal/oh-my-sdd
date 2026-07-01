@@ -45,6 +45,12 @@
   },
   "hotPaths": [
     {
+      "path": "README.md",
+      "accessCount": 7,
+      "lastAccessed": 1782937854446,
+      "type": "file"
+    },
+    {
       "path": "bin/oh-my-sdd.js",
       "accessCount": 5,
       "lastAccessed": 1782928568136,
@@ -54,12 +60,6 @@
       "path": "package.json",
       "accessCount": 5,
       "lastAccessed": 1782928716487,
-      "type": "file"
-    },
-    {
-      "path": "README.md",
-      "accessCount": 5,
-      "lastAccessed": 1782929230756,
       "type": "file"
     },
     {
@@ -174,6 +174,174 @@
       "path": "skills/oh-my-sdd-implement/SKILL.md",
       "accessCount": 1,
       "lastAccessed": 1782928468904,
+      "type": "file"
+    },
+    {
+      "path": "mkdocs.yml",
+      "accessCount": 1,
+      "lastAccessed": 1782936845441,
+      "type": "file"
+    },
+    {
+      "path": "docs/index.md",
+      "accessCount": 1,
+      "lastAccessed": 1782936867927,
+      "type": "file"
+    },
+    {
+      "path": "docs/getting-started/installation.md",
+      "accessCount": 1,
+      "lastAccessed": 1782936873727,
+      "type": "file"
+    },
+    {
+      "path": "docs/getting-started/quick-start.md",
+      "accessCount": 1,
+      "lastAccessed": 1782936880984,
+      "type": "file"
+    },
+    {
+      "path": "docs/architecture/overview.md",
+      "accessCount": 1,
+      "lastAccessed": 1782936890199,
+      "type": "file"
+    },
+    {
+      "path": "docs/architecture/skills.md",
+      "accessCount": 1,
+      "lastAccessed": 1782936902624,
+      "type": "file"
+    },
+    {
+      "path": "docs/cli.md",
+      "accessCount": 1,
+      "lastAccessed": 1782936906494,
+      "type": "file"
+    },
+    {
+      "path": "docs/safety.md",
+      "accessCount": 1,
+      "lastAccessed": 1782936913439,
+      "type": "file"
+    },
+    {
+      "path": "docs/concepts/what-is-sdd.md",
+      "accessCount": 1,
+      "lastAccessed": 1782936924109,
+      "type": "file"
+    },
+    {
+      "path": "docs/concepts/goal.md",
+      "accessCount": 1,
+      "lastAccessed": 1782936928109,
+      "type": "file"
+    },
+    {
+      "path": "docs/concepts/spec-best-practices.md",
+      "accessCount": 1,
+      "lastAccessed": 1782936937183,
+      "type": "file"
+    },
+    {
+      "path": "docs/concepts/spec-example.md",
+      "accessCount": 1,
+      "lastAccessed": 1782936944127,
+      "type": "file"
+    },
+    {
+      "path": "docs/concepts/constitution-best-practices.md",
+      "accessCount": 1,
+      "lastAccessed": 1782936949794,
+      "type": "file"
+    },
+    {
+      "path": "docs/concepts/constitution-example.md",
+      "accessCount": 1,
+      "lastAccessed": 1782936956542,
+      "type": "file"
+    },
+    {
+      "path": "docs/index.pt.md",
+      "accessCount": 1,
+      "lastAccessed": 1782936978049,
+      "type": "file"
+    },
+    {
+      "path": "docs/getting-started/installation.pt.md",
+      "accessCount": 1,
+      "lastAccessed": 1782936984485,
+      "type": "file"
+    },
+    {
+      "path": "docs/getting-started/quick-start.pt.md",
+      "accessCount": 1,
+      "lastAccessed": 1782936990843,
+      "type": "file"
+    },
+    {
+      "path": "docs/architecture/overview.pt.md",
+      "accessCount": 1,
+      "lastAccessed": 1782936999477,
+      "type": "file"
+    },
+    {
+      "path": "docs/architecture/skills.pt.md",
+      "accessCount": 1,
+      "lastAccessed": 1782937011393,
+      "type": "file"
+    },
+    {
+      "path": "docs/cli.pt.md",
+      "accessCount": 1,
+      "lastAccessed": 1782937014945,
+      "type": "file"
+    },
+    {
+      "path": "docs/safety.pt.md",
+      "accessCount": 1,
+      "lastAccessed": 1782937021751,
+      "type": "file"
+    },
+    {
+      "path": "docs/concepts/what-is-sdd.pt.md",
+      "accessCount": 1,
+      "lastAccessed": 1782937032974,
+      "type": "file"
+    },
+    {
+      "path": "docs/concepts/goal.pt.md",
+      "accessCount": 1,
+      "lastAccessed": 1782937038060,
+      "type": "file"
+    },
+    {
+      "path": "docs/concepts/spec-best-practices.pt.md",
+      "accessCount": 1,
+      "lastAccessed": 1782937048473,
+      "type": "file"
+    },
+    {
+      "path": "docs/concepts/spec-example.pt.md",
+      "accessCount": 1,
+      "lastAccessed": 1782937056276,
+      "type": "file"
+    },
+    {
+      "path": "docs/concepts/constitution-best-practices.pt.md",
+      "accessCount": 1,
+      "lastAccessed": 1782937062616,
+      "type": "file"
+    },
+    {
+      "path": "docs/concepts/constitution-example.pt.md",
+      "accessCount": 1,
+      "lastAccessed": 1782937070449,
+      "type": "file"
+    },
+    {
+      "path": "requirements-docs.txt",
+      "accessCount": 1,
+      "lastAccessed": 1782937091313,
       "type": "file"
     }
   ],

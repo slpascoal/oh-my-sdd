@@ -22,8 +22,16 @@
     "README.md",
     "LICENSE"
   ],
-  "author": "",
+  "author": "Silas Pascoal",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slpascoal/oh-my-sdd.git"
+  },
+  "homepage": "https://github.com/slpascoal/oh-my-sdd",
+  "bugs": {
+    "url": "https://github.com/slpascoal/oh-my-sdd/issues"
+  },
   "engines": {
     "node": ">=18.18.0"
   },

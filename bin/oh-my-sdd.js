@@ -28,7 +28,7 @@ if (!command || command === '--help' || command === '-h') {
     status       Mostra o estado atual da instalação
     uninstall    Remove a skill oh-my-sdd de ~/.claude/skills/
 
-  Documentação: https://github.com/onfly/oh-my-sdd
+  Documentação: https://github.com/slpascoal/oh-my-sdd
   `);
   process.exit(0);
 }

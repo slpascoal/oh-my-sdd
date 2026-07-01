@@ -45,6 +45,18 @@
   },
   "hotPaths": [
     {
+      "path": "package.json",
+      "accessCount": 4,
+      "lastAccessed": 1782925886025,
+      "type": "file"
+    },
+    {
+      "path": "bin/oh-my-sdd.js",
+      "accessCount": 3,
+      "lastAccessed": 1782925887104,
+      "type": "file"
+    },
+    {
       "path": "knowledge/0-sdd-index.md",
       "accessCount": 2,
       "lastAccessed": 1782917896320,
@@ -54,12 +66,6 @@
       "path": "skills/oh-my-sdd/SKILL.md",
       "accessCount": 2,
       "lastAccessed": 1782917940898,
-      "type": "file"
-    },
-    {
-      "path": "package.json",
-      "accessCount": 2,
-      "lastAccessed": 1782917997735,
       "type": "file"
     },
     {
@@ -96,12 +102,6 @@
       "path": "knowledge/6-example-constitution.md",
       "accessCount": 1,
       "lastAccessed": 1782915764488,
-      "type": "file"
-    },
-    {
-      "path": "bin/oh-my-sdd.js",
-      "accessCount": 1,
-      "lastAccessed": 1782917783270,
       "type": "file"
     },
     {

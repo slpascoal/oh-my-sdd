@@ -2,6 +2,7 @@
 name: oh-my-sdd
 description: Orquestra o fluxo completo de Spec-Driven Development (SDD) para uma tarefa — ativa, em sequência, as skills oh-my-sdd-constitution, oh-my-sdd-specify, oh-my-sdd-plan, oh-my-sdd-tasks e oh-my-sdd-implement, respeitando os checkpoints humanos de cada uma. Use quando o usuário pedir para "aplicar SDD", "spec-driven development", "criar specs antes de implementar", ou fornecer uma tarefa via texto livre ou card/link do Jira que deva ser especificada antes de codar.
 allowed-tools: Read, Glob, Grep, Skill
+model: claude-sonnet-5
 ---
 
 # When to use this skill

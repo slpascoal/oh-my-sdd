@@ -2,6 +2,7 @@
 name: oh-my-sdd-constitution
 description: Analisa os padrões reais do projeto atual (stack, convenções, lint/formatter, arquitetura) para gerar ou confirmar a constitution.md em .oh-my-sdd/constitution.md, perguntando ao usuário apenas o que não puder ser inferido do código. Geralmente invocada pela skill oh-my-sdd, mas pode ser chamada diretamente para (re)gerar a constitution de um projeto.
 allowed-tools: Read, Write, Glob, Grep
+model: claude-sonnet-5
 ---
 
 # When to use this skill

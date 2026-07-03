@@ -2,6 +2,7 @@
 name: oh-my-sdd-tasks
 description: Quebra um plan.md validado em tasks.md com tarefas atômicas e sequenciais, e obtém confirmação humana explícita (junto com o plan.md) antes de liberar a implementação. Geralmente invocada pela skill oh-my-sdd depois de oh-my-sdd-plan.
 allowed-tools: Read, Write, Glob, Grep
+model: claude-haiku-4-5
 ---
 
 # When to use this skill

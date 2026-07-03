@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"npm publish 2>&1\"}",
-  "error": "Exit code 1\nnpm WARN publish npm auto-corrected some errors in your package.json when publishing.  Please run \"npm pkg fix\" to address these errors.\nnpm WARN publish errors corrected:\nnpm WARN publish Removed invalid \"scripts\"\nnpm notice \nnpm notice 📦  oh-my-sdd@0.2.2\nnpm notice === Tarball Contents === \nnpm notice 1.1kB LICENSE                                   \nnpm notice 2.6kB README.md                                 \nnpm notice 1.4kB bin/oh-my-sdd.js                          \nnpm notice 51...",
-  "timestamp": "2026-07-01T20:34:59.221Z",
-  "retry_count": 1
-}

@@ -2,6 +2,7 @@
 name: oh-my-sdd-specify
 description: Gera a especificação funcional (spec.md) de uma feature em .oh-my-sdd/specs/<slug>/spec.md, usando a sintaxe EARS/GEARS e a estrutura de knowledge/4-practical-example.md, e obtém validação humana explícita antes de liberar a fase de planejamento. Geralmente invocada pela skill oh-my-sdd depois do checkpoint de constitution.
 allowed-tools: Read, Write, Glob, Grep
+model: claude-sonnet-5
 ---
 
 # When to use this skill

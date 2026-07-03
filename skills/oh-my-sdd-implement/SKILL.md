@@ -2,6 +2,7 @@
 name: oh-my-sdd-implement
 description: Implementa uma feature seguindo estritamente tasks.md e as restrições de constitution.md, marcando o progresso em tasks.md e reportando os critérios de aceite de spec.md atendidos. Só deve ser ativada depois que os checkpoints humanos de oh-my-sdd-specify e oh-my-sdd-tasks tiverem sido confirmados. Geralmente invocada pela skill oh-my-sdd.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep
+model: claude-haiku-4-5
 ---
 
 # When to use this skill

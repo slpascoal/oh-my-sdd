@@ -2,6 +2,7 @@
 name: oh-my-sdd-plan
 description: Traduz um spec.md já validado em decisões técnicas (plan.md) — arquitetura, esquema de dados/API, bibliotecas — respeitando constitution.md. Geralmente invocada pela skill oh-my-sdd depois do checkpoint de oh-my-sdd-specify.
 allowed-tools: Read, Write, Glob, Grep
+model: claude-sonnet-5
 ---
 
 # When to use this skill

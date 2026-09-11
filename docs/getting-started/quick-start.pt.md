@@ -42,6 +42,8 @@ A classificação e o motivo aparecem em uma linha e ficam registrados em `.oh-m
 
 Se você rodar `/oh-my-sdd` de novo com a mesma tarefa, o Claude detecta a pasta `.oh-my-sdd/specs/<slug>/` já existente e trata como continuação — mostrando o spec/plan/tasks atuais e perguntando o que você quer ajustar, em vez de começar do zero.
 
+Uma implementação em andamento também grava estado fino em `.oh-my-sdd/runtime/sessions/<slug>.json` (tarefa atual, timestamps, status) — gitignored, nunca commitado. Se o session sumir ou corromper, o fluxo reconstrói o estado a partir dos checkboxes de `tasks.md` e segue; ao fechar a feature, o session é arquivado para não ser retomado de novo.
+
 ## Saiba mais
 
 - [Visão Geral da Arquitetura](../architecture/overview.md) — como as 6 skills se encaixam

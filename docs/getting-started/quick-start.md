@@ -42,6 +42,8 @@ The classification and its reason are printed in a single line and recorded in `
 
 If you run `/oh-my-sdd` again with the same task, Claude detects the existing `.oh-my-sdd/specs/<slug>/` folder and treats it as a continuation — showing you the current spec/plan/tasks and asking what you'd like to adjust, instead of starting over.
 
+An active implementation also records fine-grained state in `.oh-my-sdd/runtime/sessions/<slug>.json` (current task, timestamps, status) — gitignored, never committed. If a session disappears or gets corrupted, the flow rebuilds its state from the `tasks.md` checkboxes and keeps going; when the feature closes, the session is archived so it won't be resumed again.
+
 ## Learn more
 
 - [Architecture Overview](../architecture/overview.md) — how the 6 skills fit together

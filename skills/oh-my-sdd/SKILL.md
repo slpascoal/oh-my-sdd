@@ -45,6 +45,8 @@ Ao final desta fase você deve ter um **título de feature** e uma **descrição
 1. Derive um slug curto em kebab-case a partir do título (ex: "Logout com invalidação de refresh token" → `logout-invalidate-refresh-token`).
 2. Use `Glob` para verificar se `.oh-my-sdd/specs/<slug>/` já existe no projeto atual.
 3. Informe ao usuário, em uma linha, se está iniciando uma feature nova ou retomando uma existente.
+4. **Garantir `.gitignore`:** se o projeto alvo não tem entrada `.oh-my-sdd/runtime/` no `.gitignore` (raiz), anexe-a (via `Edit`/`Bash`) — idempotente, nunca remova entradas existentes. Estado de execução (runtime) nunca vai para o git; artefatos (`specs/`, `config/`) sim.
+5. **Layout:** `.oh-my-sdd/specs/` e `.oh-my-sdd/config/` são versionados; `.oh-my-sdd/runtime/` é gitignored (sessions, evidências de sensors, scale.json).
 
 ## Phase 2.5 — Classificar Escala
 

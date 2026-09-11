@@ -56,6 +56,18 @@ Not every task deserves the full pipeline. Before running any sub-skill, the orc
 
 Classification + reason print in one line and are recorded in `.oh-my-sdd/runtime/scale.json` (gitignored). The model may only reclassify **upward**; only you can force the scale down. See [Quick Start](https://slpascoal.github.io/oh-my-sdd/getting-started/quick-start/) for the full criteria table.
 
+## Project layout
+
+Everything oh-my-sdd writes lives under `.oh-my-sdd/` in the target project:
+
+| Path | Versioned | Content |
+|---|---|---|
+| `specs/<slug>/` | yes | `spec.md`, `plan.md`, `tasks.md` — the SDD artifacts |
+| `config/` | yes | `sensors.json`, future behavior flags |
+| `runtime/` (gitignored) | no | execution state: `sessions/`, sensor evidence, `scale.json` |
+
+Execution state is never committed. The orchestrator ensures `.oh-my-sdd/runtime/` is in `.gitignore` on first use; during implementation, a `sessions/<slug>.json` tracks fine-grained progress (current task, timestamps) so an interrupted run resumes where it stopped — `tasks.md` checkboxes remain the formal source of truth, and the session is archived when the feature closes.
+
 ## Sensors & evidence
 
 Implementation only counts as done when real commands prove it. Sensors are per-stack auto-detected checks (tests, typecheck, lint — Node, Python, Go, Rust, Java) stored in `.oh-my-sdd/config/sensors.json`:

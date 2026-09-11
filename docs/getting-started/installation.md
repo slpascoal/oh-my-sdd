@@ -44,6 +44,16 @@ npx oh-my-sdd uninstall
 
 Removes all 6 skill folders and the manifest file. Nothing else on your machine is touched — see [Safety & Data](../safety.md).
 
+## Optional: session hooks
+
+In any project where you want automatic resume hints, run:
+
+```bash
+npx oh-my-sdd hook install
+```
+
+This registers two informative lifecycle hooks (SessionStart and Stop) in the project's `.claude/settings.json`: a resume hint when a session opens with an implementation in progress, and a next-step reminder while a workflow is active. They are fail-silent (always exit 0, never block), read only `.oh-my-sdd/runtime/`, and merge without touching third-party hooks (`oh-my-sdd hook uninstall` removes only the oh-my-sdd entries).
+
 ## Next step
 
 Continue to the [Quick Start](quick-start.md) to run through a full SDD cycle on a real task.

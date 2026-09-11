@@ -56,6 +56,17 @@ Not every task deserves the full pipeline. Before running any sub-skill, the orc
 
 Classification + reason print in one line and are recorded in `.oh-my-sdd/runtime/scale.json` (gitignored). The model may only reclassify **upward**; only you can force the scale down. See [Quick Start](https://slpascoal.github.io/oh-my-sdd/getting-started/quick-start/) for the full criteria table.
 
+## Session hooks (optional)
+
+Never lose the thread of an SDD run between sessions. Install lifecycle hooks in the current project:
+
+```bash
+npx oh-my-sdd hook install          # or: npx oh-my-sdd install --with-hooks
+npx oh-my-sdd hook uninstall        # removes only oh-my-sdd entries
+```
+
+When a session starts with an implementation in progress, you get a one-line resume hint (`feature X, N/M tasks — resume with /oh-my-sdd-implement <slug>`); when a response ends with an active workflow, a short next-step reminder. Fully informative: hooks are fail-silent (exit 0, never block), read only `.oh-my-sdd/runtime/`, and merge into `.claude/settings.json` without touching third-party hooks.
+
 ## Project layout
 
 Everything oh-my-sdd writes lives under `.oh-my-sdd/` in the target project:

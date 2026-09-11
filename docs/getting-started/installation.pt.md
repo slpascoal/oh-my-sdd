@@ -44,6 +44,16 @@ npx oh-my-sdd uninstall
 
 Remove as 6 pastas de skill e o arquivo de manifest. Nada mais na sua máquina é afetado — veja [Segurança e Dados](../safety.md).
 
+## Opcional: hooks de sessão
+
+Em qualquer projeto onde quiser hints automáticos de retomada, rode:
+
+```bash
+npx oh-my-sdd hook install
+```
+
+Isso registra dois hooks informativos de lifecycle (SessionStart e Stop) no `.claude/settings.json` do projeto: um hint de retomada quando a sessão abre com implementação em andamento, e um lembrete do próximo passo enquanto houver workflow ativo. São fail-silent (sempre exit 0, nunca bloqueiam), leem apenas `.oh-my-sdd/runtime/` e fazem merge sem tocar em hooks de terceiros (`oh-my-sdd hook uninstall` remove só as entradas do oh-my-sdd).
+
 ## Próximo passo
 
 Continue para o [Guia Rápido](quick-start.md) para percorrer um ciclo completo de SDD numa tarefa real.

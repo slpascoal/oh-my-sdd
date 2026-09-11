@@ -18,8 +18,10 @@ It never generates `constitution.md`, `spec.md`, `plan.md`, `tasks.md`, or imple
 
 Ensures the project has a `.oh-my-sdd/constitution.md`:
 
-- If it already exists, it's read and confirmed — no regeneration, no questions.
-- If it doesn't, the skill analyzes `package.json` / `composer.json` / `pyproject.toml` / `go.mod`, lint/formatter configs, folder structure, and existing naming conventions to **infer** the stack and conventions. It only asks the user about what can't be safely inferred (e.g. specific security guardrails, allowed/forbidden external dependencies).
+- If it already exists, it's read and confirmed — no regeneration, no questions. A regeneration/merge request scans sources again and proposes a **diff**, never regenerating from scratch (your manual edits stay untouched).
+- **Sources first:** it scans `CLAUDE.md`, `AGENTS.md`, `.cursor/rules/`, `.windsurfrules`, `CONTRIBUTING.md`, root lint/format configs and `.github/workflows/` in a fixed order, extracting rules **with source citations**. Conflicting rules between sources are listed and asked — never silently resolved.
+- Then it analyzes the code (`package.json` / `composer.json` / `pyproject.toml` / `go.mod`, folder structure, naming conventions) to fill gaps, asking the user only what neither sources nor code resolved (typically ≤2 questions).
+- Every rule ends up traceable: the generated constitution carries a `## Fontes` (Sources) block mapping each rule to its origin file, with code-inferred rules marked as such.
 - The document follows the structure and rules from the [constitution best practices](../concepts/constitution-best-practices.md) and [example](../concepts/constitution-example.md): absolute language ("always"/"never"), an explicit agent persona, a locked technology stack, and no feature-specific content.
 
 ## `oh-my-sdd-specify`

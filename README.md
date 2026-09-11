@@ -21,7 +21,7 @@ An orchestrator skill (`oh-my-sdd`) activates, in sequence, 5 specialized skills
 | Skill | Responsibility |
 |---|---|
 | `oh-my-sdd` | Orchestrates the flow, identifies the input (free text or Jira) and activates the others in order |
-| `oh-my-sdd-constitution` | Analyzes the project (stack, conventions, lint) and generates/confirms `.oh-my-sdd/constitution.md`, asking the user only what it can't infer |
+| `oh-my-sdd-constitution` | Founds the constitution on what the project already documents and practices: scans `CLAUDE.md`, `AGENTS.md`, `.cursor/rules/`, `CONTRIBUTING.md`, lint configs and CI workflows first (every rule traced to its source, conflicts asked — never silently resolved), then falls back to code analysis, asking the user only what remains |
 | `oh-my-sdd-specify` | Generates `spec.md` in EARS/GEARS — **human checkpoint #1** |
 | `oh-my-sdd-plan` | Translates the validated spec into technical decisions (`plan.md`) |
 | `oh-my-sdd-tasks` | Breaks the plan into atomic tasks (`tasks.md`) — **human checkpoint #2** |

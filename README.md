@@ -113,7 +113,7 @@ Execution state is never committed. The orchestrator ensures `.oh-my-sdd/runtime
 Implementation only counts as done when real commands prove it. Sensors are per-stack auto-detected checks (tests, typecheck, lint — Node, Python, Go, Rust, Java) stored in `.oh-my-sdd/config/sensors.json`:
 
 ```bash
-npx oh-my-sdd sensor init --yes        # detect the stack and write the config
+npx oh-my-sdd sensor init --yes        # detect the stack, write the config (asks first; --yes to skip)
 npx oh-my-sdd sensor run <slug>        # run sensors, write evidence, block on required failure
 npx oh-my-sdd sensor status <slug>     # evidence table with fingerprint validity
 ```

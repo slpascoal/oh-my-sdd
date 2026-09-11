@@ -52,7 +52,9 @@ Varre o projeto (qualquer stack: Node, Python, Go, Rust, Java) e grava `.oh-my-s
 
 Sensors detectados ficam `required: true`; não detectados permanecem opcionais e são pulados com motivo em runtime. Edite o arquivo para mudar comandos, timeouts ou obrigatoriedade — é a fonte única de verdade.
 
-Também garante `.oh-my-sdd/runtime/` no `.gitignore` (nunca commitado).
+Também grava `.oh-my-sdd/config/runtime.json` (flags de comportamento; `autonomous_mode: false` por padrão) e garante `.oh-my-sdd/runtime/` no `.gitignore` (nunca commitado).
+
+Sem `--yes` e em TTY, exibe a proposta e pergunta antes de gravar qualquer coisa. Re-executar com config existente é um **merge**: sensors novos detectados entram, entradas existentes nunca são removidas nem alteradas, e sensor declarado cujo backing artifact sumiu é sinalizado como stale. Em projeto sem stack detectável, grava proposta mínima (builtins opcionais + `runtime.json`) com aviso.
 
 ### `sensor run <slug>`
 

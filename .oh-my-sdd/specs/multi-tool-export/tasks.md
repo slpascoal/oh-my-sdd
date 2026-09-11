@@ -13,4 +13,4 @@
 - [x] 3. `bin/oh-my-sdd.js`: registrar `export` + help.
 - [x] 4. Verificação executável em fixture: cursor own-file; codex em AGENTS.md pré-existente (merge + re-run idempotente); inválido → exit 1; conteúdo sem menção a Claude Code como precondição.
 - [x] 5. README + docs cli EN/PT (seção export com tabela de superfícies).
-- [ ] 6. Commit e push sem tag.
+- [x] 6. Commit e push sem tag.

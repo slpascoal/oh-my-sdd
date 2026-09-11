@@ -52,7 +52,9 @@ Scans the project (any stack: Node, Python, Go, Rust, Java) and writes `.oh-my-s
 
 Detected sensors are `required: true`; undetected ones stay optional and are skipped with a reason at runtime. Edit the file to change commands, timeouts or requirements — it is the single source of truth.
 
-Also ensures `.oh-my-sdd/runtime/` is in `.gitignore` (never committed).
+It also writes `.oh-my-sdd/config/runtime.json` (behavior flags; `autonomous_mode: false` by default) and ensures `.oh-my-sdd/runtime/` is in `.gitignore` (never committed).
+
+Without `--yes` and on a TTY, it shows the proposal and asks before writing anything. Re-running with an existing config is a **merge**: newly detected sensors are added, existing entries are never removed or altered, and a declared sensor whose backing artifact disappeared is flagged as stale. In a project with no detectable stack, it writes a minimal proposal (builtins as optional + `runtime.json`) with a warning.
 
 ### `sensor run <slug>`
 

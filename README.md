@@ -46,6 +46,16 @@ npx oh-my-sdd status      # shows which of the 6 skills are installed and whethe
 npx oh-my-sdd uninstall   # removes the 6 skills from ~/.claude/skills/
 ```
 
+## Adaptive scale
+
+Not every task deserves the full pipeline. Before running any sub-skill, the orchestrator classifies the task and routes it:
+
+- **QUICK** — inline mini-spec + single confirmation, straight to implementation (typos, isolated bug fixes)
+- **SMALL** — condensed spec + tasks with embedded decisions, both human checkpoints kept
+- **MEDIUM / LARGE** — full pipeline, unchanged
+
+Classification + reason print in one line and are recorded in `.oh-my-sdd/runtime/scale.json` (gitignored). The model may only reclassify **upward**; only you can force the scale down. See [Quick Start](https://slpascoal.github.io/oh-my-sdd/getting-started/quick-start/) for the full criteria table.
+
 ## Sensors & evidence
 
 Implementation only counts as done when real commands prove it. Sensors are per-stack auto-detected checks (tests, typecheck, lint — Node, Python, Go, Rust, Java) stored in `.oh-my-sdd/config/sensors.json`:

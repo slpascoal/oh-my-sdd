@@ -14,7 +14,7 @@ Use depois que `spec.md`, `plan.md` e `tasks.md` de uma feature já foram valida
 
 # How to use this skill
 
-O argumento é o **slug da feature** — deve corresponder a uma pasta `.oh-my-sdd/specs/<slug>/` com `spec.md`, `plan.md` e `tasks.md` já validados.
+O argumento é o **slug da feature** — deve corresponder a uma pasta `.oh-my-sdd/specs/<slug>/` com `spec.md`, `plan.md` e `tasks.md` já validados. O orquestrador também pode ativar esta skill em **modo QUICK**, passando um mini-spec inline (sem pasta `specs/<slug>/`).
 
 > [!IMPORTANT]
 > - Não introduza requisitos, bibliotecas ou decisões arquiteturais que não constem em `spec.md`/`plan.md`. Se notar necessidade de desviar do especificado, **pare e avise o usuário** em vez de decidir silenciosamente.
@@ -23,9 +23,15 @@ O argumento é o **slug da feature** — deve corresponder a uma pasta `.oh-my-s
 
 # Tool usage flow
 
+> [!IMPORTANT]
+> - **Modo QUICK (mini-spec inline):** não há `specs/<slug>/` nem `tasks.md` — o escopo é o mini-spec recebido. Implemente respeitando `constitution.md`; derive um pseudo-slug do título para sensors. O gate de evidência (Fase 3) roda **somente se** `.oh-my-sdd/config/sensors.json` existir.
+> - **Escape de escala:** se durante a implementação a tarefa exceder o escopo previsto (mais arquivos, mais decisões de design, escopo do mini-spec/tasks insuficiente), **pare imediatamente**, explique ao usuário que a tarefa excedeu a escala prevista e aguarde reclassificação pelo orquestrador — **nunca** cresça silenciosamente dentro de QUICK.
+
 ## Phase 1 — Ler Contexto e Detectar Retomada
 
 Execute em paralelo:
+
+Em modo QUICK, pule os itens 1-2 (não existem) e leia apenas a constitution (item 3), implementando contra o mini-spec.
 
 1. `Read` em `.oh-my-sdd/specs/<slug>/tasks.md`.
 2. `Read` em `.oh-my-sdd/specs/<slug>/spec.md`.

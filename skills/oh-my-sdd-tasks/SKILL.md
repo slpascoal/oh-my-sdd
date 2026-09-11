@@ -14,7 +14,7 @@ Use depois que `plan.md` já foi gerado, para quebrá-lo em tarefas executáveis
 
 # How to use this skill
 
-O argumento é o **slug da feature** — deve corresponder a uma pasta `.oh-my-sdd/specs/<slug>/` com `plan.md` já existente.
+O argumento é o **slug da feature** — deve corresponder a uma pasta `.oh-my-sdd/specs/<slug>/`. Em fluxo **MEDIUM/LARGE**, `plan.md` já existe. Em fluxo **SMALL** (`scale=SMALL`), não há `plan.md`: o plan é embutido em `tasks.md` como seção "Decisões".
 
 > [!IMPORTANT]
 > - **Nunca retorne o controle para quem a chamou antes do checkpoint da Fase 3 ser confirmado pelo usuário.** Nenhuma implementação deve começar sem essa confirmação.
@@ -26,12 +26,14 @@ O argumento é o **slug da feature** — deve corresponder a uma pasta `.oh-my-s
 
 Execute em paralelo:
 
-1. `Read` em `.oh-my-sdd/specs/<slug>/plan.md`.
-2. `Read` em `.oh-my-sdd/specs/<slug>/spec.md`.
+1. `Read` em `.oh-my-sdd/specs/<slug>/spec.md`.
+2. `Read` em `.oh-my-sdd/specs/<slug>/plan.md` — **apenas em fluxo MEDIUM/LARGE**. Em `scale=SMALL`, o plan não existe: derive as decisões técnicas diretamente do `spec.md` + `constitution.md`.
 
 ## Phase 2 — Gerar `tasks.md`
 
-Quebre `plan.md` em uma lista de tarefas atômicas e sequenciais, cada uma pequena o bastante para ser implementada e validada isoladamente, seguindo `knowledge/3-best-practices-spec.md`, seção D ("Break Work into Small Deliveries" — *"AI performs much better on smaller tasks... facilitate breaking down the scope so that individual steps can be validated easily"*).
+Em fluxo `scale=SMALL`, inclua antes da lista uma seção `## Decisões` com as decisões técnicas (stack, arquivos afetados, abordagem) — é o plan embutido; valide-a junto no checkpoint.
+
+Quebre o plan (arquivo `plan.md` ou seção Decisões derivada em SMALL) em uma lista de tarefas atômicas e sequenciais, cada uma pequena o bastante para ser implementada e validada isoladamente, seguindo `knowledge/3-best-practices-spec.md`, seção D ("Break Work into Small Deliveries" — *"AI performs much better on smaller tasks... facilitate breaking down the scope so that individual steps can be validated easily"*).
 
 Formate como checklist markdown, uma tarefa por linha, na ordem de execução:
 

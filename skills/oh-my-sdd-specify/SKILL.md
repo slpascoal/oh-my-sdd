@@ -14,7 +14,7 @@ Use para gerar ou editar a especificação funcional de uma feature já identifi
 
 # How to use this skill
 
-O argumento é o **slug da feature** (kebab-case) e, opcionalmente, o título/descrição — necessário na primeira geração, opcional em continuações.
+O argumento é o **slug da feature** (kebab-case) e, opcionalmente, o título/descrição — necessário na primeira geração, opcional em continuações. O orquestrador pode passar `scale=SMALL` para modo condensado.
 
 > [!IMPORTANT]
 > - **Nunca retorne o controle para quem a chamou antes do checkpoint da Fase 4 ser confirmado pelo usuário.** Este é o ponto central da skill.
@@ -29,6 +29,9 @@ Execute em paralelo:
 
 1. `Read` em `.oh-my-sdd/constitution.md` do projeto (se existir) — trate como restrição vinculante para tudo que for gerado.
 2. `Glob`/`Read` em `.oh-my-sdd/specs/<slug>/spec.md` para verificar se já existe uma versão anterior.
+
+> [!IMPORTANT]
+> - **Modo condensado (`scale=SMALL`):** gere o spec apenas com Intenção + Requisitos EARS + Critérios de Aceite — **sem** seção "Non-Functional Requirements and Contracts" e sem seções extras. O checkpoint de validação permanece obrigatório e idêntico.
 
 ## Phase 2 — Continuação ou Geração Nova
 

@@ -25,6 +25,19 @@ If the [`jira-fetch`](https://github.com) skill or an Atlassian MCP tool is avai
 4. **Tasks** — Claude breaks the plan into `.oh-my-sdd/specs/<slug>/tasks.md`, then **stops again and asks you to confirm before any code is written**.
 5. **Implement** — only after that second confirmation, Claude implements the tasks one by one, checking off each as it completes it, and reports which acceptance criteria from `spec.md` were met.
 
+## Adaptive scale
+
+Before any sub-skill runs, Claude classifies your task and routes it to the right flow:
+
+| Scale | Criteria | Flow |
+|---|---|---|
+| **QUICK** | Isolated bug fix, typo, 1-2 files, no design decisions | Inline mini-spec + single confirmation, then direct implementation |
+| **SMALL** | One isolated feature, 3-10 files, design already covered by the constitution | Condensed spec + tasks with embedded decisions, both checkpoints kept |
+| **MEDIUM** | Design decisions, 10-30 files | Full pipeline (constitution → spec → plan → tasks → implement) |
+| **LARGE** | Systems, compliance, wide-reaching changes | Full pipeline |
+
+The classification and its reason are printed in a single line and recorded in `.oh-my-sdd/runtime/scale.json`. You can override the scale at any time ("run the full flow"); the model may only reclassify **upward** when work outgrows the expected scale — never downward without your override.
+
 ## Resuming a feature
 
 If you run `/oh-my-sdd` again with the same task, Claude detects the existing `.oh-my-sdd/specs/<slug>/` folder and treats it as a continuation — showing you the current spec/plan/tasks and asking what you'd like to adjust, instead of starting over.

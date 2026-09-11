@@ -14,4 +14,4 @@
 - [x] 3. `bin/oh-my-sdd.js` + `lib/commands/install.js`: registrar comando hook; flag `--with-hooks` no install chama a mesma rotina de merge após instalar skills.
 - [x] 4. Verificação executável real: fixture em /tmp com session ativa + tasks.md → dispatch com stdin SessionStart e Stop (saída esperada); settings.json pré-populado com hook de terceiros → install mantém + adiciona o nosso; uninstall remove só o nosso; sem session → silêncio.
 - [x] 5. README (seção "Session hooks") + docs EN/PT (instalação opcional de hooks + comportamento).
-- [ ] 6. Commit e push sem tag (passo final do usuário).
+- [x] 6. Commit e push sem tag (passo final do usuário).

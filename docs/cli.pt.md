@@ -65,3 +65,11 @@ Tabela read-only de evidências por sensor, incluindo se cada evidência ainda �
 ### Evidência de critérios de aceite
 
 A skill `oh-my-sdd-implement` só pode reportar um critério de aceite como atendido com evidência: sensor passando (mapeado em `criteria` do `sensors.json`) ou nota de verificação manual em `.oh-my-sdd/runtime/sensors/<slug>/manual-checks.md`. Critérios sem nenhum dos dois são reportados como **pendente de verificação** — nunca como atendidos.
+
+## `report`
+
+```bash
+npx oh-my-sdd report [--json]
+```
+
+Tabela de portfólio de todas as features SDD do projeto atual: slug, fase atual, progresso de tarefas (`N/M`) e critérios de aceite pendentes. Prioridade de derivação de fase: session ativa em runtime > checkboxes de `tasks.md` > presença de artefatos. Com `--json`, emite array estável de `{slug, phase, tasks_done, tasks_total, pending_criteria}` (schema documentado; breaking change = major). Read-only — em projeto sem `.oh-my-sdd/`, mensagem amigável e exit 0.

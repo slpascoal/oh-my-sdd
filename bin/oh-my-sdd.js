@@ -16,6 +16,7 @@ const commands = {
   uninstall: () => import('../lib/commands/uninstall.js'),
   sensor: () => import('../lib/commands/sensor.js'),
   hook: () => import('../lib/commands/hook.js'),
+  report: () => import('../lib/commands/report.js'),
 };
 
 if (!command || command === '--help' || command === '-h') {
@@ -31,6 +32,7 @@ if (!command || command === '--help' || command === '-h') {
     uninstall    Remove as 6 skills oh-my-sdd de ~/.claude/skills/
     sensor       Verificações executáveis: sensor init | run <slug> | status <slug>
     hook         Hooks de sessão: hook install | uninstall | dispatch
+    report       Portfólio das features SDD do projeto (fase, progresso, pendências)
 
   Documentação: https://github.com/slpascoal/oh-my-sdd
   `);

@@ -65,3 +65,11 @@ Read-only table of evidence per sensor, including whether each evidence is still
 ### Acceptance-criteria evidence
 
 The `oh-my-sdd-implement` skill may only report an acceptance criterion as met with evidence: a passing sensor (mapped in `sensors.json` `criteria`) or a manual check note in `.oh-my-sdd/runtime/sensors/<slug>/manual-checks.md`. Criteria without either are reported as **pending verification** — never as met.
+
+## `report`
+
+```bash
+npx oh-my-sdd report [--json]
+```
+
+Portfolio table of all SDD features in the current project: slug, current phase, task progress (`N/M`) and pending acceptance criteria. Phase derivation priority: active runtime session > `tasks.md` checkboxes > artifact presence. With `--json`, emits a stable array of `{slug, phase, tasks_done, tasks_total, pending_criteria}` (documented schema; breaking changes bump the major version). Read-only — in a project without `.oh-my-sdd/`, prints a friendly message and exits 0.

@@ -56,6 +56,17 @@ Not every task deserves the full pipeline. Before running any sub-skill, the orc
 
 Classification + reason print in one line and are recorded in `.oh-my-sdd/runtime/scale.json` (gitignored). The model may only reclassify **upward**; only you can force the scale down. See [Quick Start](https://slpascoal.github.io/oh-my-sdd/getting-started/quick-start/) for the full criteria table.
 
+## Feature report
+
+Portfolio view of every SDD feature in the current project — slug, current phase, task progress and pending acceptance criteria:
+
+```bash
+npx oh-my-sdd report          # human table
+npx oh-my-sdd report --json   # stable machine schema ([{slug, phase, tasks_done, tasks_total, pending_criteria}])
+```
+
+Phase derivation: active session > task checkboxes > artifact presence (`specify` → `plan` → `tasks` → `implement` → `done`). Read-only; the oh-my-sdd repo itself is the first user (dogfooding).
+
 ## Session hooks (optional)
 
 Never lose the thread of an SDD run between sessions. Install lifecycle hooks in the current project:

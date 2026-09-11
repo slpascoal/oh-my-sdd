@@ -40,10 +40,17 @@ Verifique quais tarefas de `tasks.md` já têm checkbox marcado (`- [x]`) — es
 3. Ao concluir a tarefa, marque seu checkbox em `tasks.md` (`Edit`).
 4. Se, durante a implementação, perceber que a tarefa exige algo fora do que `spec.md`/`plan.md` previram: **pare imediatamente**, explique o conflito ao usuário e aguarde orientação antes de continuar.
 
-## Phase 3 — Reportar Resultado
+## Phase 3 — Gate de evidência e relatório final
 
-Ao concluir todas as tarefas (ou ao pausar por um conflito), reporte ao usuário/chamador:
+Ao concluir todas as tarefas (ou ao pausar por um conflito), **antes de qualquer relatório final**:
 
-1. Quais tarefas de `tasks.md` foram implementadas nesta execução.
-2. Quais critérios de aceite de `spec.md` (seção "Critérios de Aceite") foram atendidos — comparando explicitamente o código gerado contra cada item do checklist, no espírito do loop de validação descrito em `knowledge/2-goal-of-sdd.md` (*"AI agents can compare the code they generate directly against the acceptance criteria listed in the specification"*).
-3. Critérios de aceite que ainda não puderam ser verificados ou que ficaram pendentes.
+1. Execute `npx oh-my-sdd sensor run <slug>` (via `Bash`). Este comando roda os sensors declarados em `.oh-my-sdd/config/sensors.json` e grava evidências em `.oh-my-sdd/runtime/sensors/<slug>/`.
+2. **Gate bloqueante:** se qualquer sensor `required: true` falhar, **não emita o relatório final** — apresente a saída do sensor ao usuário, sugira a correção e só re-emita o relatório após nova execução com passagem. Sensor obrigatório que não pode executar (comando inexistente/timeout) também bloqueia, com motivo claro.
+3. Para cada critério da seção "Critérios de Aceite" do `spec.md`, classifique com evidência:
+   - **Atendido** — somente se um sensor (mapeado em `criteria` do `sensors.json` ou logicamente ligado) passou, ou se existir nota de verificação manual em `.oh-my-sdd/runtime/sensors/<slug>/manual-checks.md`.
+   - **Pendente de verificação** — sem sensor que o prove nem nota manual. **Nunca** reporte como atendido.
+4. Então reporte ao usuário/chamador:
+   1. Quais tarefas de `tasks.md` foram implementadas nesta execução.
+   2. Critérios de aceite **atendidos com evidência** (sensor + resultado) — comparando o código gerado contra cada item do checklist, no espírito do loop de validação descrito em `knowledge/2-goal-of-sdd.md` (*"AI agents can compare the code they generate directly against the acceptance criteria listed in the specification"*).
+   3. Critérios **pendentes de verificação** (sem evidência) — explícitos, nunca silenciados.
+5. Se um critério for verificável manualmente, registre a nota em `.oh-my-sdd/runtime/sensors/<slug>/manual-checks.md` (formato: `- [ ] <critério> — verificado manualmente, <data>`); só critérios com nota registrada podem ser reportados como atendidos sem sensor.

@@ -14,6 +14,7 @@ const commands = {
   install: () => import('../lib/commands/install.js'),
   status: () => import('../lib/commands/status.js'),
   uninstall: () => import('../lib/commands/uninstall.js'),
+  sensor: () => import('../lib/commands/sensor.js'),
 };
 
 if (!command || command === '--help' || command === '-h') {
@@ -27,6 +28,7 @@ if (!command || command === '--help' || command === '-h') {
     install      Instala as 6 skills oh-my-sdd globalmente em ~/.claude/skills/
     status       Mostra o estado atual da instalação
     uninstall    Remove as 6 skills oh-my-sdd de ~/.claude/skills/
+    sensor       Verificações executáveis: sensor init | run <slug> | status <slug>
 
   Documentação: https://github.com/slpascoal/oh-my-sdd
   `);

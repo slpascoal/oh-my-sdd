@@ -29,3 +29,39 @@ npx oh-my-sdd uninstall
 ```
 
 Asks for confirmation, then removes all 6 skill folders from `~/.claude/skills/` and the manifest file. See [Safety & Data](safety.md) for exactly what this does and doesn't touch.
+
+## `sensor`
+
+```bash
+npx oh-my-sdd sensor init --yes
+npx oh-my-sdd sensor run <feature-slug>
+npx oh-my-sdd sensor status <feature-slug>
+```
+
+Executable verification for SDD features. Sensors are real commands (per-stack auto-detected or edited by you) that **prove** — instead of presume — code integrity after implementation.
+
+### `sensor init`
+
+Scans the project (any stack: Node, Python, Go, Rust, Java) and writes `.oh-my-sdd/config/sensors.json` with the resolved commands for your stack:
+
+| Sensor | Detects | Resolved command example |
+|---|---|---|
+| `tests-passing` | `package.json` `scripts.test`, pytest, go.mod, Cargo.toml, pom.xml, gradle | `npm test`, `pytest`, `go test ./...`, `cargo test` |
+| `typecheck-clean` | tsconfig/jsconfig, pyrightconfig, mypy, Cargo.toml | `npx tsc --noEmit`, `pyright`, `mypy .`, `cargo check` |
+| `lint` | eslint/biome, ruff, golangci, flake8, clippy | `npx eslint .`, `ruff check .`, `golangci-lint run` |
+
+Detected sensors are `required: true`; undetected ones stay optional and are skipped with a reason at runtime. Edit the file to change commands, timeouts or requirements — it is the single source of truth.
+
+Also ensures `.oh-my-sdd/runtime/` is in `.gitignore` (never committed).
+
+### `sensor run <slug>`
+
+Runs every declared sensor for the feature slug and writes evidence JSON files to `.oh-my-sdd/runtime/sensors/<slug>/` (command, exit code, duration, truncated output, timestamp, fingerprint). Exits 1 and prints the failing output if any `required` sensor fails — this is the blocking gate the `oh-my-sdd-implement` skill runs before its final report.
+
+### `sensor status <slug>`
+
+Read-only table of evidence per sensor, including whether each evidence is still valid against the current code fingerprint. Editing a tracked file after a sensor passed **expires that evidence** — re-run to refresh.
+
+### Acceptance-criteria evidence
+
+The `oh-my-sdd-implement` skill may only report an acceptance criterion as met with evidence: a passing sensor (mapped in `sensors.json` `criteria`) or a manual check note in `.oh-my-sdd/runtime/sensors/<slug>/manual-checks.md`. Criteria without either are reported as **pending verification** — never as met.

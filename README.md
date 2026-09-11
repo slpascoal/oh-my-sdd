@@ -46,6 +46,18 @@ npx oh-my-sdd status      # shows which of the 6 skills are installed and whethe
 npx oh-my-sdd uninstall   # removes the 6 skills from ~/.claude/skills/
 ```
 
+## Sensors & evidence
+
+Implementation only counts as done when real commands prove it. Sensors are per-stack auto-detected checks (tests, typecheck, lint — Node, Python, Go, Rust, Java) stored in `.oh-my-sdd/config/sensors.json`:
+
+```bash
+npx oh-my-sdd sensor init --yes        # detect the stack and write the config
+npx oh-my-sdd sensor run <slug>        # run sensors, write evidence, block on required failure
+npx oh-my-sdd sensor status <slug>     # evidence table with fingerprint validity
+```
+
+Before its final report, `oh-my-sdd-implement` runs the sensors and blocks on any required failure. Acceptance criteria are reported as met only with evidence (passing sensor or manual check note); otherwise they stay explicitly **pending verification**. Evidence lives in `.oh-my-sdd/runtime/` (gitignored) and expires when tracked code changes. See the [CLI reference](https://slpascoal.github.io/oh-my-sdd/cli/) for details.
+
 ## Knowledge base
 
 The [`knowledge/`](./knowledge) folder documents the SDD fundamentals used by every skill: maturity levels (spec-first, spec-anchored, spec-as-source), best practices for writing specs and constitutions, EARS/GEARS syntax, and complete practical examples.

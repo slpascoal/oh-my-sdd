@@ -56,6 +56,24 @@ Not every task deserves the full pipeline. Before running any sub-skill, the orc
 
 Classification + reason print in one line and are recorded in `.oh-my-sdd/runtime/scale.json` (gitignored). The model may only reclassify **upward**; only you can force the scale down. See [Quick Start](https://slpascoal.github.io/oh-my-sdd/getting-started/quick-start/) for the full criteria table.
 
+## Multi-tool export
+
+oh-my-sdd is Claude Code-first, but the SDD flow itself is tool-agnostic. Export the distilled rules so other AI tools follow the same pipeline in the same repo:
+
+```bash
+npx oh-my-sdd export cursor|codex|gemini|windsurf|zed
+```
+
+| Tool | Surface | Strategy |
+|---|---|---|
+| Cursor | `.cursor/rules/oh-my-sdd.mdc` | own file |
+| Codex | `AGENTS.md` | marked section |
+| Gemini CLI | `GEMINI.md` | marked section |
+| Windsurf | `.windsurf/rules/oh-my-sdd.md` | own file |
+| Zed | `.zed/rules/oh-my-sdd.md` | own file |
+
+Marked-section tools get idempotent merge between `<!-- oh-my-sdd:start|end -->` markers — third-party content is never touched; re-runs update only our section. Unsupported tool: list + exit 1.
+
 ## Feature report
 
 Portfolio view of every SDD feature in the current project — slug, current phase, task progress and pending acceptance criteria:

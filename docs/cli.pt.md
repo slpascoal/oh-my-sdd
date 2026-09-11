@@ -73,3 +73,11 @@ npx oh-my-sdd report [--json]
 ```
 
 Tabela de portfólio de todas as features SDD do projeto atual: slug, fase atual, progresso de tarefas (`N/M`) e critérios de aceite pendentes. Prioridade de derivação de fase: session ativa em runtime > checkboxes de `tasks.md` > presença de artefatos. Com `--json`, emite array estável de `{slug, phase, tasks_done, tasks_total, pending_criteria}` (schema documentado; breaking change = major). Read-only — em projeto sem `.oh-my-sdd/`, mensagem amigável e exit 0.
+
+## `export`
+
+```bash
+npx oh-my-sdd export <tool>
+```
+
+Grava as regras SDD destiladas (pipeline, checkpoints bloqueantes, layout `.oh-my-sdd/`, regra de evidência) na superfície de regras de outra ferramenta de IA: `cursor` (`.cursor/rules/oh-my-sdd.mdc`), `windsurf` (`.windsurf/rules/oh-my-sdd.md`), `zed` (`.zed/rules/oh-my-sdd.md`), `codex` (seção marcada em `AGENTS.md`), `gemini` (seção marcada em `GEMINI.md`). Superfícies own-file são arquivos nossos (sobrescrita segura); superfícies de seção fazem merge idempotente entre marcadores `<!-- oh-my-sdd:start|end -->`, preservando conteúdo de terceiros. Ferramenta não suportada: lista suportadas e exit 1. Conteúdo exportado é tool-agnostic — sem precondição de cliente.

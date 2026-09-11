@@ -17,6 +17,7 @@ const commands = {
   sensor: () => import('../lib/commands/sensor.js'),
   hook: () => import('../lib/commands/hook.js'),
   report: () => import('../lib/commands/report.js'),
+  export: () => import('../lib/commands/export.js'),
 };
 
 if (!command || command === '--help' || command === '-h') {
@@ -33,6 +34,7 @@ if (!command || command === '--help' || command === '-h') {
     sensor       Verificações executáveis: sensor init | run <slug> | status <slug>
     hook         Hooks de sessão: hook install | uninstall | dispatch
     report       Portfólio das features SDD do projeto (fase, progresso, pendências)
+    export       Exporta as regras SDD para outra ferramenta: export cursor|codex|gemini|windsurf|zed
 
   Documentação: https://github.com/slpascoal/oh-my-sdd
   `);

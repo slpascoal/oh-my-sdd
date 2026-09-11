@@ -12,4 +12,4 @@
 - [x] 2. `bin/oh-my-sdd.js`: registrar `report` + linha de help.
 - [x] 3. Verificação executável: report no próprio repo (fases corretas das features da suíte), --json parseável por jq, projeto sem .oh-my-sdd → mensagem amigável exit 0.
 - [x] 4. README + docs cli.md/cli.pt.md (seção report; sem página nova, sem nav).
-- [ ] 5. Commit e push sem tag.
+- [x] 5. Commit e push sem tag.

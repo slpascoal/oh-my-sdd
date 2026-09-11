@@ -73,3 +73,11 @@ npx oh-my-sdd report [--json]
 ```
 
 Portfolio table of all SDD features in the current project: slug, current phase, task progress (`N/M`) and pending acceptance criteria. Phase derivation priority: active runtime session > `tasks.md` checkboxes > artifact presence. With `--json`, emits a stable array of `{slug, phase, tasks_done, tasks_total, pending_criteria}` (documented schema; breaking changes bump the major version). Read-only — in a project without `.oh-my-sdd/`, prints a friendly message and exits 0.
+
+## `export`
+
+```bash
+npx oh-my-sdd export <tool>
+```
+
+Writes the distilled SDD rules (pipeline, blocking checkpoints, `.oh-my-sdd/` layout, evidence rule) to another AI tool's rule surface: `cursor` (`.cursor/rules/oh-my-sdd.mdc`), `windsurf` (`.windsurf/rules/oh-my-sdd.md`), `zed` (`.zed/rules/oh-my-sdd.md`), `codex` (marked section in `AGENTS.md`), `gemini` (marked section in `GEMINI.md`). File-kind surfaces are owned files (safe overwrite); section-kind surfaces merge idempotently between `<!-- oh-my-sdd:start|end -->` markers, preserving third-party content. Unsupported tool prints the supported list and exits 1. Exported content is tool-agnostic — no client preconditions.

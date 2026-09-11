@@ -11,4 +11,4 @@
 - [x] 2. `lib/commands/sensor.js`: re-scan com config existente = merge aditivo (novos detectados entram, existentes preservados, stale sugerido sem remover); nunca regenera config autorada.
 - [x] 3. Verificação executável: fixture Node com tests+tsconfig (3 sensors + runtime.json); fixture sem package.json (proposta mínima + aviso); re-scan com config autorada (novo sensor entra, existente intacto, nada removido).
 - [x] 4. README + docs cli EN/PT (sensor init: runtime.json + comportamento de re-scan).
-- [ ] 5. Commit e push sem tag (fecha a suíte 8/8).
+- [x] 5. Commit e push sem tag (fecha a suíte 8/8).

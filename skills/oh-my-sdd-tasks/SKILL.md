@@ -35,14 +35,21 @@ Em fluxo `scale=SMALL`, inclua antes da lista uma seção `## Decisões` com as 
 
 Quebre o plan (arquivo `plan.md` ou seção Decisões derivada em SMALL) em uma lista de tarefas atômicas e sequenciais, cada uma pequena o bastante para ser implementada e validada isoladamente, seguindo `knowledge/3-best-practices-spec.md`, seção D ("Break Work into Small Deliveries" — *"AI performs much better on smaller tasks... facilitate breaking down the scope so that individual steps can be validated easily"*).
 
-Formate como checklist markdown, na ordem de execução. Cada tarefa **sempre** declara dois campos: `altera:` (arquivos/módulos previstos) e `verifica:` (comando, teste ou inspeção concreta que prova a conclusão):
+Formate como checklist markdown, na ordem de execução. Cada tarefa **sempre** declara `altera:` (arquivos/módulos previstos) e `verifica:` (comando, teste ou inspeção concreta que prova a conclusão). Tarefas que cruzam interfaces declaram também `consome:` e `produz:`; tarefas que mudam comportamento declaram `passos:` com o ciclo RED→GREEN:
 
 ```markdown
 ## Tasks
 
 - [ ] 1. <tarefa atômica>
       altera: <arquivo(s)/módulo(s)>
+      consome: <assinaturas de tarefas anteriores, ou "—">
+      produz: <assinaturas para tarefas seguintes, ou "—">
       verifica: <comando, teste ou inspeção>
+      passos:
+        1. escrever teste que falha (RED)
+        2. rodar e confirmar a falha esperada
+        3. implementar o mínimo (GREEN)
+        4. rodar e confirmar verde
 - [ ] 2. <tarefa atômica>
       altera: <arquivo(s)/módulo(s)>
       verifica: <comando, teste ou inspeção>
@@ -52,6 +59,7 @@ Formate como checklist markdown, na ordem de execução. Cada tarefa **sempre** 
 Regras:
 
 - Uma verificação por tarefa; tarefas grandes demais para uma verificação devem ser divididas.
+- `passos:` é **obrigatório** para tarefas que mudam comportamento. Para configuração, documentação ou geração, use `passos: reduzido (motivo)` e justifique na própria tarefa.
 - Cada tarefa **sempre** rastreia a um requisito ou critério do `spec.md`. Tarefa sem rastreio é removida ou justificada.
 - A lista **sempre** termina com uma tarefa de **auditoria de diff**: comparar `git diff --stat` com a união dos `altera:` das tarefas e reportar qualquer arquivo fora do previsto — nunca reverter silenciosamente.
 - O campo `altera:` é o contrato de escopo: implementação que precise tocar arquivo fora dele exige parada e aviso ao usuário.

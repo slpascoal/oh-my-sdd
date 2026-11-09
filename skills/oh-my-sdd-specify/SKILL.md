@@ -36,7 +36,7 @@ Execute em paralelo:
 ## Phase 2 — Continuação ou Geração Nova
 
 - **Se `spec.md` já existe**: apresente o conteúdo atual ao usuário e pergunte explicitamente o que deseja ajustar. Edite com base na resposta antes de seguir para o checkpoint (Fase 4).
-- **Se não existe**: prossiga para a Fase 3.
+- **Se não existe**: avalie a descrição antes de gerar. **Modo descoberta:** se a tarefa não trouxer resultado observável, usuário ou critério verificável, conduza no máximo **três perguntas abertas, uma por vez**, sobre o que muda o que será construído. Nunca pergunte o que o pedido ou o projeto já respondem. Registre as respostas na seção "Premissas e Ambiguidades" e só então prossiga para a Fase 3. Se a descrição já for suficiente, vá direto para a Fase 3.
 
 ## Phase 3 — Gerar `spec.md`
 

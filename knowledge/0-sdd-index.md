@@ -11,3 +11,7 @@ Here we index all the knowledge about the Spec-Driven Development (SDD).
 - [5. Best Practices for Creating an Effective constitution.md](5-best-practices-constitution.md)
 - [6. Practical Example of a constitution.md](6-example-constitution.md)
 - [7. Change hygiene for coding agents](7-change-hygiene.md)
+- [8. Verification discipline](8-verification-discipline.md)
+- [9. Test-first execution](9-test-first-execution.md)
+- [10. Systematic debugging](10-systematic-debugging.md)
+- [11. Execution records](11-execution-records.md)

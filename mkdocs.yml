@@ -75,5 +75,6 @@ nav:
       - Writing an Effective Constitution: concepts/constitution-best-practices.md
       - Practical Constitution Example: concepts/constitution-example.md
       - Change Hygiene: concepts/change-hygiene.md
+      - Execution Discipline: concepts/execution-discipline.md
   - CLI Reference: cli.md
   - Safety & Data: safety.md

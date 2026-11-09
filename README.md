@@ -69,6 +69,19 @@ SDD disciplines what comes before and after implementation; change hygiene disci
 
 Full rules live in [`knowledge/7-change-hygiene.md`](./knowledge/7-change-hygiene.md). QUICK tasks apply only the minimal subset (assumptions, minimum, surgical diff); MEDIUM/LARGE apply all four. No new skill, phase, or human checkpoint is added.
 
+## Execution discipline
+
+Change hygiene disciplines the edit; execution discipline disciplines the proof. Four rules are embedded in the pipeline where they act:
+
+| Rule | Where it acts | What it enforces |
+|---|---|---|
+| **Evidence before claims** | `implement` → report | Run the command, read output and exit code, then state the result. No claim without a fresh run |
+| **Test first** | `tasks` → `implement` | Behavior changes start with a test that failed; minimum code to pass; whole suite before finishing |
+| **Root cause first** | `implement` on failure | Reproduce and isolate before fixing; after three failed fixes, stop and question the architecture |
+| **Record, don't improvise** | `implement` | Plan-internal decisions become `Ruling: decision — reason — cost if wrong`; scope, security and irreversible actions stop and ask |
+
+Full rules live in `knowledge/8-verification-discipline.md`, `9-test-first-execution.md`, `10-systematic-debugging.md` and `11-execution-records.md`. Scale still governs rigor: QUICK gets evidence and root cause, SMALL adds TDD, MEDIUM/LARGE get the full set plus an optional fresh-context review.
+
 ## Multi-tool export
 
 oh-my-sdd is Claude Code-first, but the SDD flow itself is tool-agnostic. Export the distilled rules so other AI tools follow the same pipeline in the same repo:

@@ -25,4 +25,11 @@ You enforce Spec-Driven Development in this repository. Before implementing any 
 - **Minimum that solves:** no unrequested features, no single-use abstractions, no speculative configuration or impossible-scenario handling.
 - **Surgical diff:** every changed line must trace to a task; do not reformat or refactor adjacent untouched code; remove only orphans your change created.
 - **Verifiable per task:** each task declares how it is verified before execution; a task without verification is not done.
+
+## Execution discipline
+
+- **Evidence before claims:** run the command, read its output and exit code, then state the result. No claim without a fresh run.
+- **Test first:** for behavior changes, write the test, watch it fail, implement the minimum, watch it pass; run the whole suite before finishing.
+- **Root cause first:** reproduce, instrument, isolate before fixing. After three failed fixes, stop and question the architecture with the user.
+- **Record, don't improvise:** plan-internal decisions are logged as `Ruling: decision — reason — cost if wrong`. Scope, dependency, security, irreversible actions, and spec conflicts stop and ask.
 <!-- oh-my-sdd:end -->

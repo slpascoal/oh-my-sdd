@@ -10,3 +10,4 @@ Here we index all the knowledge about the Spec-Driven Development (SDD).
 - [4. Practical Example of a SPEC.md](4-practical-example.md)
 - [5. Best Practices for Creating an Effective constitution.md](5-best-practices-constitution.md)
 - [6. Practical Example of a constitution.md](6-example-constitution.md)
+- [7. Change hygiene for coding agents](7-change-hygiene.md)

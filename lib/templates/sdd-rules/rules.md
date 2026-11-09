@@ -18,4 +18,11 @@ You enforce Spec-Driven Development in this repository. Before implementing any 
 - **Evidence over self-assessment:** an acceptance criterion may only be reported as met with executable evidence (a passing check) or an explicit manual-verification note in `.oh-my-sdd/runtime/sensors/<slug>/manual-checks.md`; otherwise it stays "pending verification".
 - **Respect `.oh-my-sdd/` layout:** `specs/` and `config/` are versioned; `runtime/` is execution state (gitignored) and must never be committed.
 - Slugs are kebab-case; artifacts live under `.oh-my-sdd/specs/<slug>/`.
+
+## Change hygiene (applies during implementation)
+
+- **Surface before deciding:** state assumptions and competing interpretations; stop and ask when genuinely unclear. Never fill gaps silently.
+- **Minimum that solves:** no unrequested features, no single-use abstractions, no speculative configuration or impossible-scenario handling.
+- **Surgical diff:** every changed line must trace to a task; do not reformat or refactor adjacent untouched code; remove only orphans your change created.
+- **Verifiable per task:** each task declares how it is verified before execution; a task without verification is not done.
 <!-- oh-my-sdd:end -->

@@ -19,12 +19,13 @@ O argumento é o **slug da feature** — deve corresponder a uma pasta `.oh-my-s
 > [!IMPORTANT]
 > - Não introduza requisitos, bibliotecas ou decisões arquiteturais que não constem em `spec.md`/`plan.md`. Se notar necessidade de desviar do especificado, **pare e avise o usuário** em vez de decidir silenciosamente.
 > - Respeite estritamente as restrições de `constitution.md` (stack travada, padrões de código, guardrails de segurança) durante toda a implementação.
-> - Marque cada tarefa como concluída em `tasks.md` (`- [x]`) imediatamente após implementá-la, não em lote no final.
+> - Aplique `knowledge/7-change-hygiene.md` durante toda a edição de código: premissas explícitas, mínimo que resolve, diff cirúrgico e verificação antes de concluir.
+> - Marque cada tarefa como concluída em `tasks.md` (`- [x]`) imediatamente após implementá-la **e após executar a verificação declarada**, não em lote no final.
 
 # Tool usage flow
 
 > [!IMPORTANT]
-> - **Modo QUICK (mini-spec inline):** não há `specs/<slug>/` nem `tasks.md` — o escopo é o mini-spec recebido. Implemente respeitando `constitution.md`; derive um pseudo-slug do título para sensors. O gate de evidência (Fase 3) roda **somente se** `.oh-my-sdd/config/sensors.json` existir.
+> - **Modo QUICK (mini-spec inline):** não há `specs/<slug>/` nem `tasks.md` — o escopo é o mini-spec recebido. Implemente respeitando `constitution.md`; derive um pseudo-slug do título para sensors. Aplique apenas os guardrails A (premissas, se houver ambiguidade real), B (mínimo que resolve) e C (diff cirúrgico) de `knowledge/7-change-hygiene.md`; a verificação por tarefa (D) é substituída pelo gate de evidência da Fase 3, que roda **somente se** `.oh-my-sdd/config/sensors.json` existir.
 > - **Escape de escala:** se durante a implementação a tarefa exceder o escopo previsto (mais arquivos, mais decisões de design, escopo do mini-spec/tasks insuficiente), **pare imediatamente**, explique ao usuário que a tarefa excedeu a escala prevista e aguarde reclassificação pelo orquestrador — **nunca** cresça silenciosamente dentro de QUICK.
 
 ## Phase 1 — Ler Contexto e Detectar Retomada
@@ -51,9 +52,11 @@ Se o session não existir ou estiver corrompido (JSON inválido, campos ausentes
 ## Phase 2 — Implementar Tarefa por Tarefa
 
 1. Percorra as tarefas pendentes de `tasks.md`, na ordem em que aparecem.
-2. Para cada tarefa: implemente exatamente o que ela descreve, usando `Read`/`Edit`/`Write`/`Bash` conforme necessário (ex: rodar testes, instalar dependências já previstas em `plan.md`), respeitando `constitution.md`.
-3. Ao concluir a tarefa, marque seu checkbox em `tasks.md` (`Edit`) e **imediatamente** atualize o session (`Write`): `taskIndex`, `updatedAt` — nunca em lote no final.
-4. Se, durante a implementação, perceber que a tarefa exige algo fora do que `spec.md`/`plan.md` previram: **pare imediatamente**, explique o conflito ao usuário e aguarde orientação antes de continuar.
+2. **Antes da primeira edição de cada tarefa:** leia a seção "Premissas e Ambiguidades" do `spec.md` e o campo `verifica:` da tarefa. Se a tarefa for ambígua na prática, **pare e pergunte** — nunca preencha a lacuna em silêncio.
+3. Para cada tarefa: implemente exatamente o que ela descreve, usando `Read`/`Edit`/`Write`/`Bash` conforme necessário (ex: rodar testes, instalar dependências já previstas em `plan.md`), respeitando `constitution.md` e os guardrails B (mínimo que resolve) e C (diff cirúrgico) de `knowledge/7-change-hygiene.md`.
+4. **Antes de marcar a tarefa como concluída:** execute a verificação declarada em `verifica:`. Se passar, marque o checkbox em `tasks.md` (`Edit`) e **imediatamente** atualize o session (`Write`): `taskIndex`, `updatedAt` — nunca em lote no final. Se falhar ou não puder executar, **mantenha a tarefa desmarcada**, reporte o motivo e corrija antes de seguir.
+5. Se a tarefa não tiver campo `verifica:` (tasks antigas), derive uma verificação concreta antes de marcar como concluída; sem verificação executada, a tarefa permanece pendente.
+6. Se, durante a implementação, perceber que a tarefa exige algo fora do que `spec.md`/`plan.md` previram — incluindo arquivo fora do campo `altera:` — **pare imediatamente**, explique o conflito ao usuário e aguarde orientação antes de continuar. Nunca reverta ou amplie escopo silenciosamente.
 
 ## Phase 3 — Gate de evidência e relatório final
 

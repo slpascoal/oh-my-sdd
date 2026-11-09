@@ -35,15 +35,26 @@ Em fluxo `scale=SMALL`, inclua antes da lista uma seção `## Decisões` com as 
 
 Quebre o plan (arquivo `plan.md` ou seção Decisões derivada em SMALL) em uma lista de tarefas atômicas e sequenciais, cada uma pequena o bastante para ser implementada e validada isoladamente, seguindo `knowledge/3-best-practices-spec.md`, seção D ("Break Work into Small Deliveries" — *"AI performs much better on smaller tasks... facilitate breaking down the scope so that individual steps can be validated easily"*).
 
-Formate como checklist markdown, uma tarefa por linha, na ordem de execução:
+Formate como checklist markdown, na ordem de execução. Cada tarefa **sempre** declara dois campos: `altera:` (arquivos/módulos previstos) e `verifica:` (comando, teste ou inspeção concreta que prova a conclusão):
 
 ```markdown
 ## Tasks
 
 - [ ] 1. <tarefa atômica>
+      altera: <arquivo(s)/módulo(s)>
+      verifica: <comando, teste ou inspeção>
 - [ ] 2. <tarefa atômica>
+      altera: <arquivo(s)/módulo(s)>
+      verifica: <comando, teste ou inspeção>
 ...
 ```
+
+Regras:
+
+- Uma verificação por tarefa; tarefas grandes demais para uma verificação devem ser divididas.
+- Cada tarefa **sempre** rastreia a um requisito ou critério do `spec.md`. Tarefa sem rastreio é removida ou justificada.
+- A lista **sempre** termina com uma tarefa de **auditoria de diff**: comparar `git diff --stat` com a união dos `altera:` das tarefas e reportar qualquer arquivo fora do previsto — nunca reverter silenciosamente.
+- O campo `altera:` é o contrato de escopo: implementação que precise tocar arquivo fora dele exige parada e aviso ao usuário.
 
 Cada tarefa deve deixar claro o que muda e onde (arquivo/módulo), sem virar pseudocódigo — o "como" detalhado de cada tarefa é resolvido durante a implementação, respeitando `plan.md`.
 

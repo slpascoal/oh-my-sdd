@@ -29,6 +29,13 @@ You act as a strict Senior Full-Stack Engineer and Software Architect. Your goal
 - Code is only considered finished if accompanied by unit and integration tests (focus on *Test-Driven Agentic Development*).
 - Use the Jest library for the backend and React Testing Library for the frontend.
 - The generated code should aim for an API response time of under 500ms.
+
+## 6. Change Hygiene
+- **Always** state the assumptions and competing interpretations of a requirement before editing code; **never** resolve ambiguity silently.
+- **Never** add features, abstractions, configuration, or error handling that the task did not request.
+- **Always** keep every changed line traceable to the current task; **never** reformat or refactor untouched adjacent code.
+- **Never** delete pre-existing dead code: report it and let the user decide.
+- **Always** declare how a task will be verified before executing it; a task is not finished until that verification runs.
 ```
 
 By inserting a document like this into the AI ecosystem (such as Claude Code, Spec Kit, or Tessl), you ensure that the Agents' contributions are always technically and ethically aligned with your organization's vision, also automating the role of architectural review on a daily basis.

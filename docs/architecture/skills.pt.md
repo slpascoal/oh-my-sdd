@@ -23,6 +23,7 @@ Garante que o projeto tenha um `.oh-my-sdd/constitution.md`:
 - Depois analisa o código (`package.json` / `composer.json` / `pyproject.toml` / `go.mod`, estrutura de pastas, convenções de nomenclatura) para preencher lacunas, perguntando ao usuário só o que nem fontes nem código resolveram (tipicamente ≤2 perguntas).
 - Toda regra fica rastreável: a constitution gerada traz um bloco `## Fontes` mapeando cada regra ao arquivo de origem; regras inferidas do código são marcadas como tal.
 - O documento segue a estrutura e as regras das [boas práticas de constitution](../concepts/constitution-best-practices.md) e do [exemplo prático](../concepts/constitution-example.md): linguagem absoluta ("sempre"/"nunca"), uma persona explícita para o agente, uma stack tecnológica travada, e nenhum conteúdo específico de feature.
+- Exige uma seção **Higiene de mudança** com 3–5 regras absolutas derivadas de `knowledge/7-change-hygiene.md` (premissas explícitas, mínimo que resolve, diff cirúrgico, verificação antes de concluir), especializadas para a stack detectada. No modo merge, essas regras entram como diff proposto e nunca sobrescrevem edições manuais.
 
 ## `oh-my-sdd-specify`
 
@@ -33,19 +34,20 @@ Gera `.oh-my-sdd/specs/<slug>/spec.md`:
 - Trata `constitution.md` como restrição vinculante.
 - Se `spec.md` já existir, trata como edição/continuação em vez de regenerar do zero.
 - Estrutura o documento exatamente como o [exemplo prático de spec](../concepts/spec-example.md), usando sintaxe EARS/GEARS para requisitos funcionais, um checklist verificável de critérios de aceite, e requisitos não-funcionais/contratos.
+- Exige uma seção **Premissas e Ambiguidades** antes dos requisitos EARS: premissas, interpretações concorrentes e perguntas em aberto ficam registradas; ambiguidade é apresentada ao usuário, nunca resolvida em silêncio. Em `scale=SMALL`, a seção é limitada a três linhas.
 - **Checkpoint #1**: apresenta o spec e não devolve o controle ao orquestrador até o usuário validá-lo explicitamente (ou pausar/abandonar explicitamente).
 
 ## `oh-my-sdd-plan`
 
 **Tools permitidas:** `Read`, `Write`, `Glob`, `Grep`
 
-Traduz o `spec.md` validado em `.oh-my-sdd/specs/<slug>/plan.md`: decisões arquiteturais, esquema de dados/API e escolha de bibliotecas — o "como" — sempre dentro das restrições de `constitution.md`. Não tem checkpoint próprio; `plan.md` é validado junto com `tasks.md` na fase seguinte.
+Traduz o `spec.md` validado em `.oh-my-sdd/specs/<slug>/plan.md`: decisões arquiteturais, esquema de dados/API e escolha de bibliotecas — o "como" — sempre dentro das restrições de `constitution.md`. Também registra **alternativas consideradas** (ao menos uma descartada com motivo) e **justificativa de complexidade** (cada abstração, camada ou dependência nova declara o problema real de hoje e os consumidores atuais). Não tem checkpoint próprio; `plan.md` é validado junto com `tasks.md` na fase seguinte.
 
 ## `oh-my-sdd-tasks`
 
 **Tools permitidas:** `Read`, `Write`, `Glob`, `Grep`
 
-Quebra `plan.md` em `.oh-my-sdd/specs/<slug>/tasks.md` — tarefas pequenas, atômicas e sequenciais, cada uma verificável de forma independente.
+Quebra `plan.md` em `.oh-my-sdd/specs/<slug>/tasks.md` — tarefas pequenas, atômicas e sequenciais, cada uma verificável de forma independente. Toda tarefa declara `altera:` (arquivos/módulos que pode tocar) e `verifica:` (comando, teste ou inspeção concreta que prova a conclusão); a lista sempre termina com uma tarefa de **auditoria de diff**, comparando `git diff --stat` com o escopo declarado.
 
 **Checkpoint #2**: apresenta `plan.md` **e** `tasks.md` juntos e não devolve o controle até o usuário confirmar explicitamente que a implementação pode começar.
 
@@ -56,6 +58,7 @@ Quebra `plan.md` em `.oh-my-sdd/specs/<slug>/tasks.md` — tarefas pequenas, at�
 Implementa a feature:
 
 - Lê `tasks.md`, `spec.md` e `constitution.md`; detecta quais tarefas já estão marcadas (suporte a retomada).
-- Implementa tarefa por tarefa, respeitando `constitution.md`. Se precisar desviar do que foi especificado, para e pergunta em vez de decidir silenciosamente.
+- Implementa tarefa por tarefa, respeitando `constitution.md` e os guardrails de higiene de mudança. Se precisar desviar do que foi especificado — incluindo tocar arquivo fora do `altera:` da tarefa —, para e pergunta em vez de decidir silenciosamente.
+- Executa o `verifica:` declarado da tarefa antes de marcá-la; tarefa cuja verificação não rodou permanece desmarcada e é reportada como pendente.
 - Marca cada tarefa em `tasks.md` conforme é concluída.
 - Reporta quais tarefas foram implementadas e quais critérios de aceite de `spec.md` foram atendidos — comparando o código gerado diretamente contra o checklist.

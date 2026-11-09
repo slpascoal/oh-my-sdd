@@ -37,3 +37,9 @@ For natural language to be interpreted flawlessly by agents, use syntactic stand
 AI performs much better on smaller tasks. A good SDD-oriented spec should facilitate breaking down the scope so that individual steps can be validated easily.
 
 This is why `oh-my-sdd-tasks` breaks `plan.md` into small, atomic, sequential tasks instead of one large implementation step.
+
+## E. State assumptions explicitly
+
+A spec is only unambiguous if the gaps are visible. Before writing EARS requirements, record the assumptions the request did not fix, the competing interpretations that remain plausible, and the open questions that need a human decision. When two readings are reasonable, present both — never pick one silently.
+
+`oh-my-sdd-specify` requires an **Assumptions and Ambiguities** section before the requirements. "No ambiguity identified" is a valid answer, but the section is never omitted.

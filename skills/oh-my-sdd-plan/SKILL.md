@@ -37,6 +37,8 @@ Gere `.oh-my-sdd/specs/<slug>/plan.md` traduzindo o "o quê" do spec no "como" t
 - **Decisões arquiteturais**: como os requisitos funcionais do spec se traduzem em módulos/camadas/fluxos, dentro da stack travada por `constitution.md`.
 - **Esquema de dados/API**: formatos, endpoints, tabelas ou contratos afetados.
 - **Bibliotecas e dependências**: apenas as já permitidas por `constitution.md`; se precisar de algo novo, justifique explicitamente e sinalize como decisão a confirmar.
+- **Alternativas consideradas**: registre ao menos uma alternativa descartada e o motivo. Nunca aceite a primeira arquitetura sem comparar com a mais simples.
+- **Justificativa de complexidade**: para cada abstração, camada, padrão ou dependência nova, declare qual problema real ela resolve **hoje** e quantos consumidores atuais ela tem. Abstração com um único consumidor exige justificativa explícita ou sai do plano.
 
 Mantenha o nível de detalhe do "como" sem descer a pseudocódigo linha-a-linha — isso é papel da fase de implementação, não do plano (ver `knowledge/3-best-practices-spec.md`, seção C sobre não superespecificar).
 

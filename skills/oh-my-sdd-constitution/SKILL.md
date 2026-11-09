@@ -72,11 +72,12 @@ Não pergunte nada que a Fase 2 (fontes + código) já resolveu com confiança. 
 
 ## Phase 4 — Gerar ou Fazer Merge de `constitution.md`
 
-Gere `.oh-my-sdd/constitution.md` seguindo **estritamente** a estrutura de `knowledge/6-example-constitution.md` (seções: Persona principal, Stack de tecnologia não-negociável, Padrões de código e arquitetura, Governança de segurança, Qualidade e testes) e as regras de `knowledge/5-best-practices-constitution.md`:
+Gere `.oh-my-sdd/constitution.md` seguindo **estritamente** a estrutura de `knowledge/6-example-constitution.md` (seções: Persona principal, Stack de tecnologia não-negociável, Padrões de código e arquitetura, Governança de segurança, Qualidade e testes, Higiene de mudança) e as regras de `knowledge/5-best-practices-constitution.md`:
 - Linguagem absoluta ("sempre"/"nunca"), nunca sugestões vagas.
 - Defina a persona do agente já na primeira seção.
 - Trave a stack detectada na Fase 2 — proíba explicitamente alternativas não usadas no projeto.
 - Documente apenas regras globais do repositório, nunca descrições de features.
+- **Seção "Higiene de mudança" (obrigatória):** inclua 3-5 regras absolutas e específicas do repositório derivadas de `knowledge/7-change-hygiene.md` — premissas explícitas, mínimo que resolve, diff cirúrgico e verificação antes de concluir. A seção especializa as regras para a stack detectada; nunca copie descrição de feature.
 - **Bloco "Fontes"**: feche o documento com uma seção `## Fontes` listando a origem de cada regra (arquivo + seção/trecho). Toda regra vinda de fonte é rastreável; regras inferidas do código são marcadas `(inferido do código)`.
 
 **Modo merge (constitution já existe):** se `.oh-my-sdd/constitution.md` já existe e o usuário pediu regeneração/merge, **nunca regenere do zero** — extraia das fontes apenas regras NOVAS ou atualizadas, apresente como diff proposto (o que entra, o que muda) e aplique só com confirmação. Editas manuais do usuário permanecem intocadas.

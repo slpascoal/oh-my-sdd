@@ -56,6 +56,19 @@ Not every task deserves the full pipeline. Before running any sub-skill, the orc
 
 Classification + reason print in one line and are recorded in `.oh-my-sdd/runtime/scale.json` (gitignored). The model may only reclassify **upward**; only you can force the scale down. See [Quick Start](https://slpascoal.github.io/oh-my-sdd/getting-started/quick-start/) for the full criteria table.
 
+## Change hygiene
+
+SDD disciplines what comes before and after implementation; change hygiene disciplines the edit itself. Four behavioral guardrails are embedded in the artifacts you already review:
+
+| Guardrail | Where it acts | What it enforces |
+|---|---|---|
+| **Surface assumptions** | `specify` → `implement` | Assumptions and competing interpretations are written down; ambiguity stops the run instead of being silently resolved |
+| **Minimum that solves** | `plan` → `implement` | No unrequested features, single-use abstractions, or speculative configuration; every abstraction justifies today's problem and current consumers |
+| **Surgical diff** | `tasks` → `implement` | Every changed line traces to a task; adjacent untouched code is never reformatted or refactored; only self-created orphans are removed |
+| **Verifiable per task** | `tasks` → `implement` | Each task declares its verification up front and cannot be checked off until that verification runs |
+
+Full rules live in [`knowledge/7-change-hygiene.md`](./knowledge/7-change-hygiene.md). QUICK tasks apply only the minimal subset (assumptions, minimum, surgical diff); MEDIUM/LARGE apply all four. No new skill, phase, or human checkpoint is added.
+
 ## Multi-tool export
 
 oh-my-sdd is Claude Code-first, but the SDD flow itself is tool-agnostic. Export the distilled rules so other AI tools follow the same pipeline in the same repo:

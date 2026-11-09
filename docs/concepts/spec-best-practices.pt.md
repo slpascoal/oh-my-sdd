@@ -37,3 +37,9 @@ A `oh-my-sdd-specify` escreve todo requisito funcional nessa sintaxe — veja o 
 A IA tem desempenho muito melhor em tarefas menores. Uma boa spec orientada a SDD deve facilitar a quebra do escopo para que passos individuais possam ser validados facilmente.
 
 É por isso que a `oh-my-sdd-tasks` quebra o `plan.md` em tarefas pequenas, atômicas e sequenciais, em vez de um único passo grande de implementação.
+
+## E. Declare premissas explicitamente
+
+Uma spec só é inequívoca se as lacunas estiverem visíveis. Antes de escrever os requisitos EARS, registre as premissas que o pedido não fixou, as interpretações concorrentes que continuam plausíveis e as perguntas em aberto que precisam de decisão humana. Quando duas leituras forem razoáveis, apresente ambas — nunca escolha uma em silêncio.
+
+A `oh-my-sdd-specify` exige uma seção **Premissas e Ambiguidades** antes dos requisitos. "Nenhuma ambiguidade identificada" é uma resposta válida, mas a seção nunca é omitida.

@@ -31,7 +31,7 @@ Execute em paralelo:
 2. `Glob`/`Read` em `.oh-my-sdd/specs/<slug>/spec.md` para verificar se já existe uma versão anterior.
 
 > [!IMPORTANT]
-> - **Modo condensado (`scale=SMALL`):** gere o spec apenas com Intenção + Requisitos EARS + Critérios de Aceite — **sem** seção "Non-Functional Requirements and Contracts" e sem seções extras. O checkpoint de validação permanece obrigatório e idêntico.
+> - **Modo condensado (`scale=SMALL`):** gere o spec apenas com Intenção + Premissas e Ambiguidades (máximo 3 linhas) + Requisitos EARS + Critérios de Aceite — **sem** seção "Non-Functional Requirements and Contracts" e sem seções extras. O checkpoint de validação permanece obrigatório e idêntico.
 
 ## Phase 2 — Continuação ou Geração Nova
 
@@ -43,12 +43,17 @@ Execute em paralelo:
 Estruture o documento seguindo **exatamente** o modelo de `knowledge/4-practical-example.md`:
 
 1. **Intenção e Visão Geral** — o quê e o porquê, sem detalhes de implementação.
-2. **Requisitos Funcionais** em sintaxe EARS/GEARS (ver `knowledge/3-best-practices-spec.md`, seção B):
+2. **Premissas e Ambiguidades** — antes dos requisitos:
+   - Liste as premissas que o pedido não fixou e por quê.
+   - Liste interpretações concorrentes quando houver mais de uma leitura razoável. **Nunca** escolha uma silenciosamente: apresente as opções ao usuário.
+   - Registre perguntas em aberto que precisam de decisão humana.
+   - Resposta curta ("nenhuma ambiguidade identificada") é válida, mas a seção **nunca** é omitida. Em `scale=SMALL`, ocupe no máximo três linhas.
+3. **Requisitos Funcionais** em sintaxe EARS/GEARS (ver `knowledge/3-best-practices-spec.md`, seção B):
    - Event-Driven: `**When** [gatilho], o sistema **shall** [ação].`
    - Unwanted Behavior: `**If** [condição indesejada], o sistema **shall** [resposta].`
    - State-Driven: `**While** [estado], o sistema **shall** [ação].`
-3. **Critérios de Aceite** como checklist verificável (`- [ ] ...`).
-4. **Requisitos Não-Funcionais e Contratos** — segurança, schema de dados, dependências externas proibidas/permitidas — sempre coerentes com `constitution.md`.
+4. **Critérios de Aceite** como checklist verificável (`- [ ] ...`).
+5. **Requisitos Não-Funcionais e Contratos** — segurança, schema de dados, dependências externas proibidas/permitidas — sempre coerentes com `constitution.md`.
 
 Ao balancear o nível de detalhe, siga `knowledge/3-best-practices-spec.md` seção C: seja estrito na intenção e nos contratos (Nível 1), mas não escreva pseudocódigo de implementação (isso é papel de `plan.md`/`tasks.md`, Nível 2).
 

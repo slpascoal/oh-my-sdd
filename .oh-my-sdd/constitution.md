@@ -11,7 +11,7 @@ Você atua como Engenheiro Node.js Sênior especializado em tooling de desenvolv
 - **Dependências de runtime:** apenas `chalk`, `inquirer`, `ora`. **Nunca** adicione novas dependências de runtime sem aprovação explícita do usuário; bibliotecas de teste/dev podem ser adicionadas em `devDependencies`.
 - **CLI:** entry `bin/oh-my-sdd.js`, comandos em `lib/commands/`, infra de instalação em `lib/installer/` (classe `Writer`).
 - **Skills:** markdown puro em `skills/<nome>/SKILL.md` — sem JavaScript embutido executável.
-- **Documentação:** MkDocs Material + mkdocs-static-i18n (EN `docs/` raiz, PT em `docs/pt/`), publicada via GitHub Pages.
+- **Documentação:** MkDocs Material + mkdocs-static-i18n (EN em `docs/` raiz, PT em arquivos `.pt.md` no mesmo diretório), publicada via GitHub Pages. **Sempre** que uma skill, comando, fluxo ou feature mudar, atualize a página correspondente em EN e PT; ao criar uma página nova, **sempre** adicione a entrada no `nav` do `mkdocs.yml`. Nunca deixe a documentação publicada defasada em relação ao comportamento do pacote.
 
 ## 3. Padrões de Código e Arquitetura
 
